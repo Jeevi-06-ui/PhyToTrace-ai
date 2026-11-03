@@ -1,0 +1,26 @@
+# Region-Based Pest-Evidence Classifier Configuration
+model:
+  backbone: "mobilenet_v3_small"
+  pretrained: true
+  input_size: [224, 224]
+  targets:
+    0: "tuta_evidence"
+    1: "liriomyza_evidence"
+  num_targets: 2
+  activation: "sigmoid"
+
+training:
+  batch_size: 16
+  epochs: 25
+  lr: 0.0005
+  weight_decay: 0.0001
+  loss: "masked_bce"  # Only computes loss where verified ground-truth labels exist
+  min_verified_samples_to_train: 20
+  save_dir: "models/checkpoints/species"
+
+calibration:
+  method: "temperature_scaling"
+  tuta_threshold: 0.60
+  liriomyza_threshold: 0.60
+  uncertainty_margin: 0.15  # Scores within [threshold - margin, threshold] trigger abstention
+

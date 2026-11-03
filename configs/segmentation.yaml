@@ -1,0 +1,31 @@
+# Leaf & Mine Segmentation Configuration
+leaf_segmentation:
+  architecture: "unet_light"
+  encoder: "mobilenet_v3_small"
+  in_channels: 3
+  num_classes: 1  # Binary: leaf vs background
+  input_size: [256, 256]
+  loss: "bce_dice"
+  bce_weight: 0.5
+  dice_weight: 0.5
+  batch_size: 8
+  learning_rate: 0.001
+  epochs: 20
+  save_dir: "models/checkpoints/leaf_segmenter"
+
+mine_segmentation:
+  framework: "yolo_seg"
+  pretrained_weights: "yolo11n-seg.pt"  # Ultralytics lightweight nano seg model
+  input_size: 640
+  batch_size: 4
+  epochs: 30
+  classes:
+    0: "leaf_miner_damage"
+  confidence_threshold: 0.25
+  iou_threshold: 0.45
+  save_dir: "models/checkpoints/mine_segmenter"
+
+damage_assessment:
+  min_leaf_pixels: 500
+  warning_occlusion_threshold: 0.40  # Flag if leaf is partially out of frame
+

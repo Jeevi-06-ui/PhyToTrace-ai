@@ -1,0 +1,43 @@
+# Dataset Configuration for PhytoTrace AI
+dataset:
+  name: "PhytoTrace Tomato Leaf Dataset"
+  raw_dir: "data/raw"
+  processed_dir: "data/processed"
+  interim_dir: "data/interim"
+  metadata_path: "data/metadata/metadata.csv"
+  splits_dir: "data/splits"
+  samples_dir: "data/samples"
+  annotations_dir: "data/annotations"
+
+  # Split proportions
+  split_ratios:
+    train: 0.70
+    val: 0.15
+    test: 0.15
+
+  # Group-aware splitting keys (leakage prevention hierarchy)
+  group_keys:
+    primary: "farm_id"
+    secondary: "plant_id"
+    tertiary: "leaf_id"
+
+  # Image validation constraints
+  validation:
+    allowed_extensions: [".jpg", ".jpeg", ".png", ".webp"]
+    min_width: 256
+    min_height: 256
+    max_file_size_mb: 25.0
+    blur_threshold_var_laplacian: 100.0  # OpenCV Laplacian variance for blur detection
+
+  # Controlled vocabularies
+  vocabularies:
+    growth_stages: ["vegetative", "flowering", "fruiting", "harvesting", "unknown"]
+    image_view_types: ["whole_leaf", "close_up_mine", "canopy_context", "dorsal", "ventral"]
+    image_qualities: ["sharp", "slightly_blurry", "poor_lighting", "glare", "severe_blur"]
+    visible_damage_types: ["none", "leaf_miner_mine", "chewing", "blight", "punctures", "curling", "other"]
+    suspected_pests: ["none", "tuta_absoluta", "liriomyza_spp", "mixed", "other", "unknown"]
+    confirmed_pests: ["none", "tuta_absoluta", "liriomyza_spp", "mixed", "unconfirmed"]
+    confirmation_methods: ["none", "larval_microscopy", "adult_morphology", "expert_agronomist", "molecular_pcr", "pheromone_trap_correlation"]
+    label_verification_statuses: ["unverified_field_guess", "expert_reviewed", "lab_confirmed"]
+    mixed_infestation_statuses: ["single_pest", "mixed_confirmed", "mixed_suspected", "none", "not_evaluated"]
+

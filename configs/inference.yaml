@@ -1,0 +1,42 @@
+# Integrated Inference Pipeline Configuration
+pipeline:
+  device: "auto"  # 'mps', 'cpu', or 'auto'
+  max_image_dimension: 1920
+  quality_check:
+    blur_threshold: 100.0
+    brightness_min: 30.0
+    brightness_max: 235.0
+
+  baseline:
+    enabled: true
+    weights_path: "models/checkpoints/baseline/baseline_mobilenetv3_best.pt"
+    confidence_threshold: 0.50
+
+  leaf_segmenter:
+    enabled: true
+    weights_path: "models/checkpoints/leaf_segmenter/leaf_unet_best.pt"
+    threshold: 0.50
+
+  mine_segmenter:
+    enabled: true
+    weights_path: "models/checkpoints/mine_segmenter/best.pt"
+    confidence_threshold: 0.25
+
+  species_classifier:
+    enabled: true
+    weights_path: "models/checkpoints/species/species_evidence_best.pt"
+    tuta_threshold: 0.60
+    liriomyza_threshold: 0.60
+
+  decision_engine:
+    min_leaf_area_ratio: 0.05
+    conservative_fallback_label: "mine_detected_species_uncertain"
+
+  visualization:
+    leaf_mask_color: [46, 139, 87]      # Forest green (BGR/RGB compatible)
+    tuta_region_color: [255, 165, 0]    # Amber
+    liriomyza_region_color: [0, 206, 209] # Cyan / Dark Turquoise
+    uncertain_region_color: [255, 127, 80] # Coral
+    excluded_color: [128, 128, 128]     # Gray
+    overlay_alpha: 0.40
+

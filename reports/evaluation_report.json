@@ -1,0 +1,18 @@
+{
+  "baseline_classifier": {
+    "status": "NOT_EVALUATED",
+    "reason": "Baseline checkpoint not found at /Users/jeevithp/Desktop/PhyToTrace/models/checkpoints/baseline/baseline_mobilenetv3_best.pt. Model has not been trained."
+  },
+  "leaf_segmenter": {
+    "status": "NOT_EVALUATED",
+    "reason": "Leaf segmentation evaluation requires ground-truth test masks."
+  },
+  "mine_segmenter": {
+    "status": "NOT_EVALUATED",
+    "reason": "Mine segmentation evaluation requires ground-truth test polygons."
+  },
+  "species_evidence_classifier": {
+    "status": "NOT_EVALUATED",
+    "reason": "Species evidence model requires verified expert species test set."
+  }
+}

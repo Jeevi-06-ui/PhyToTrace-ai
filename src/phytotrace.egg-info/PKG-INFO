@@ -1,0 +1,32 @@
+Metadata-Version: 2.4
+Name: phytotrace
+Version: 0.1.0
+Summary: Explainable AI for Mixed Leaf-Miner Infestation Detection, Damage Assessment and Progression Monitoring in Tomato Crops
+Author-email: PhytoTrace AI Team <research@phytotrace.ai>
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: torch>=2.1.0
+Requires-Dist: torchvision>=0.16.0
+Requires-Dist: ultralytics>=8.1.0
+Requires-Dist: opencv-python-headless>=4.8.0
+Requires-Dist: scikit-learn>=1.3.0
+Requires-Dist: numpy>=1.24.0
+Requires-Dist: scipy>=1.10.0
+Requires-Dist: pillow>=10.0.0
+Requires-Dist: matplotlib>=3.7.0
+Requires-Dist: pandas>=2.0.0
+Requires-Dist: pyyaml>=6.0
+Requires-Dist: pydantic>=2.5.0
+Requires-Dist: fastapi>=0.100.0
+Requires-Dist: uvicorn>=0.23.0
+Requires-Dist: python-multipart>=0.0.6
+Requires-Dist: streamlit>=1.30.0
+Requires-Dist: pytest>=7.4.0
+Requires-Dist: httpx>=0.25.0
+Provides-Extra: dev
+Requires-Dist: pytest>=7.4.0; extra == "dev"
+Requires-Dist: ruff>=0.1.0; extra == "dev"

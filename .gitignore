@@ -1,0 +1,58 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# C extensions
+.Python
+env/
+venv/
+.venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Project large data files & checkpoints (Keep data safe locally, out of Git)
+data/raw/*
+!data/raw/.gitkeep
+data/interim/*
+!data/interim/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+data/splits/*
+!data/splits/.gitkeep
+data/annotations/*
+!data/annotations/.gitkeep
+data/samples/*
+!data/samples/.gitkeep
+
+models/checkpoints/*
+!models/checkpoints/.gitkeep
+models/exports/*
+!models/exports/.gitkeep
+*.pt
+*.pth
+*.onnx
+
+# Experiments & runs
+experiments/*
+!experiments/.gitkeep
+runs/
+
+# IDE & OS
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Environment variables
+.env
+.env.local
+
+# PyTest & cache
+.pytest_cache/
+.coverage
+htmlcov/
+
