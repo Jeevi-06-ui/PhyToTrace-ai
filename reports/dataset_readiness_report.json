@@ -1,0 +1,21 @@
+{
+  "status": "INSUFFICIENT_DATA",
+  "total_records": 0,
+  "valid_images_on_disk": 0,
+  "missing_images_on_disk": 0,
+  "unreadable_corrupt_images": 0,
+  "duplicate_image_ids": 0,
+  "class_distribution": {},
+  "mapped_3class_distribution": {
+    "healthy": 0,
+    "leaf_miner_damage": 0,
+    "other_damage": 0
+  },
+  "independent_farms": 0,
+  "independent_plants": 0,
+  "schema_errors": [],
+  "reasons_for_block": [
+    "Metadata file does not exist at /Users/jeevithp/Desktop/PhyToTrace/data/metadata/metadata.csv."
+  ],
+  "action_required": "Ingest student images using 'scripts/ingest_images.py' or create 'data/metadata/metadata.csv'."
+}

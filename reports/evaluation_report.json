@@ -1,7 +1,95 @@
 {
   "baseline_classifier": {
-    "status": "NOT_EVALUATED",
-    "reason": "Baseline checkpoint not found at /Users/jeevithp/Desktop/PhyToTrace/models/checkpoints/baseline/baseline_mobilenetv3_best.pt. Model has not been trained."
+    "accuracy": 0.0,
+    "balanced_accuracy": 0.0,
+    "macro_f1": 0.0,
+    "weighted_f1": 0.0,
+    "confusion_matrix": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        4,
+        0
+      ]
+    ],
+    "per_class": {
+      "healthy": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 0
+      },
+      "leaf_miner_damage": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 0
+      },
+      "other_damage": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 4
+      }
+    },
+    "total_samples": 4,
+    "status": "EVALUATED",
+    "test_samples": 4,
+    "total_inference_time_ms": 115,
+    "avg_inference_time_per_image_ms": 28.75,
+    "misclassified_count": 4,
+    "misclassified_gallery": [
+      {
+        "image_id": "SMK_0002",
+        "ground_truth": "other_damage",
+        "predicted": "leaf_miner_damage",
+        "farm_id": "FARM_SMK_0",
+        "tomato_variety": "Synthetic_Check",
+        "image_quality": "sharp",
+        "notes": "Synthetic training smoke test fixture"
+      },
+      {
+        "image_id": "SMK_0005",
+        "ground_truth": "other_damage",
+        "predicted": "leaf_miner_damage",
+        "farm_id": "FARM_SMK_1",
+        "tomato_variety": "Synthetic_Check",
+        "image_quality": "sharp",
+        "notes": "Synthetic training smoke test fixture"
+      },
+      {
+        "image_id": "SMK_0008",
+        "ground_truth": "other_damage",
+        "predicted": "leaf_miner_damage",
+        "farm_id": "FARM_SMK_0",
+        "tomato_variety": "Synthetic_Check",
+        "image_quality": "sharp",
+        "notes": "Synthetic training smoke test fixture"
+      },
+      {
+        "image_id": "SMK_0011",
+        "ground_truth": "other_damage",
+        "predicted": "leaf_miner_damage",
+        "farm_id": "FARM_SMK_1",
+        "tomato_variety": "Synthetic_Check",
+        "image_quality": "sharp",
+        "notes": "Synthetic training smoke test fixture"
+      }
+    ],
+    "known_limitations": [
+      "Model performs image-level damage screening only and does not identify insect species (Tuta vs Liriomyza).",
+      "Visible damage percentage calculation requires subsequent leaf and damage segmentation stages.",
+      "Performance on out-of-distribution farm sites should be independently verified before field deployment."
+    ]
   },
   "leaf_segmenter": {
     "status": "NOT_EVALUATED",

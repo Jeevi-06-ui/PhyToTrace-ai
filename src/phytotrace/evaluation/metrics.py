@@ -28,10 +28,11 @@ def compute_classification_metrics(
     macro_f1 = float(f1_score(y_true, y_pred, average="macro", zero_division=0))
     weighted_f1 = float(f1_score(y_true, y_pred, average="weighted", zero_division=0))
 
-    per_class_precision = precision_score(y_true, y_pred, average=None, zero_division=0)
-    per_class_recall = recall_score(y_true, y_pred, average=None, zero_division=0)
-    per_class_f1 = f1_score(y_true, y_pred, average=None, zero_division=0)
-    cm = confusion_matrix(y_true, y_pred, labels=list(range(len(class_names))))
+    labels = list(range(len(class_names)))
+    per_class_precision = precision_score(y_true, y_pred, labels=labels, average=None, zero_division=0)
+    per_class_recall = recall_score(y_true, y_pred, labels=labels, average=None, zero_division=0)
+    per_class_f1 = f1_score(y_true, y_pred, labels=labels, average=None, zero_division=0)
+    cm = confusion_matrix(y_true, y_pred, labels=labels)
 
     class_stats = {}
     for i, name in enumerate(class_names):
