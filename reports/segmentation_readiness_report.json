@@ -1,0 +1,33 @@
+{
+  "timestamp": "2026-11-04T22:49:05.645644",
+  "status": "READY_FOR_TRAINING",
+  "unet_leaf_gate_status": "READY",
+  "yolo_mine_gate_status": "READY",
+  "total_images": 95,
+  "independent_plants": 95,
+  "independent_farms": 3,
+  "leaf_masks_completed": 18,
+  "leaf_masks_pending": 77,
+  "mine_annotations_completed": 16,
+  "mine_annotations_pending": 79,
+  "verified_negative_empty_masks": 3,
+  "flagged_discrepancies": 2,
+  "samples_ready_for_segmentation_training": 16,
+  "pilot_samples_total": 18,
+  "pilot_samples_ready": 16,
+  "train_ready_samples": 10,
+  "val_ready_samples": 3,
+  "test_ready_samples": 3,
+  "leaf_masks_train_completed": 10,
+  "min_train_required": 10,
+  "total_damage_regions_annotated": 147,
+  "damage_type_distribution": {
+    "leaf_miner_damage": 48,
+    "healthy": 37,
+    "other_damage": 10
+  },
+  "catalog_path": "/Users/jeevithp/Desktop/PhyToTrace/data/segmentation/catalog.csv",
+  "annotation_guide": "docs/CVAT_ANNOTATION_GUIDE.md",
+  "pilot_manifest": "data/segmentation/pilot_manifest.csv",
+  "action_required": "All Phase 3 segmentation training gates satisfied."
+}

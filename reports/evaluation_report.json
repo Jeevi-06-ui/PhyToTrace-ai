@@ -1,88 +1,133 @@
 {
   "baseline_classifier": {
-    "accuracy": 0.0,
-    "balanced_accuracy": 0.0,
-    "macro_f1": 0.0,
-    "weighted_f1": 0.0,
+    "accuracy": 0.4,
+    "balanced_accuracy": 0.4286,
+    "macro_f1": 0.4212,
+    "weighted_f1": 0.3964,
     "confusion_matrix": [
       [
-        0,
-        0,
+        3,
+        2,
+        1
+      ],
+      [
+        5,
+        2,
         0
       ],
       [
+        1,
         0,
-        0,
-        0
-      ],
-      [
-        0,
-        4,
-        0
+        1
       ]
     ],
     "per_class": {
       "healthy": {
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1": 0.0,
-        "support": 0
+        "precision": 0.3333,
+        "recall": 0.5,
+        "f1": 0.4,
+        "support": 6
       },
       "leaf_miner_damage": {
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1": 0.0,
-        "support": 0
+        "precision": 0.5,
+        "recall": 0.2857,
+        "f1": 0.3636,
+        "support": 7
       },
       "other_damage": {
-        "precision": 0.0,
-        "recall": 0.0,
-        "f1": 0.0,
-        "support": 4
+        "precision": 0.5,
+        "recall": 0.5,
+        "f1": 0.5,
+        "support": 2
       }
     },
-    "total_samples": 4,
+    "total_samples": 15,
     "status": "EVALUATED",
-    "test_samples": 4,
-    "total_inference_time_ms": 115,
-    "avg_inference_time_per_image_ms": 28.75,
-    "misclassified_count": 4,
+    "test_samples": 15,
+    "total_inference_time_ms": 294,
+    "avg_inference_time_per_image_ms": 19.6,
+    "misclassified_count": 9,
     "misclassified_gallery": [
       {
-        "image_id": "SMK_0002",
-        "ground_truth": "other_damage",
-        "predicted": "leaf_miner_damage",
-        "farm_id": "FARM_SMK_0",
-        "tomato_variety": "Synthetic_Check",
+        "image_id": "IMG_0011",
+        "ground_truth": "leaf_miner_damage",
+        "predicted": "healthy",
+        "farm_id": "BLOCK_3",
+        "tomato_variety": "unknown",
         "image_quality": "sharp",
-        "notes": "Synthetic training smoke test fixture"
+        "notes": "Field tag: Non-healthy / damaged leaflet; needs review for leaf miner vs other damage."
       },
       {
-        "image_id": "SMK_0005",
-        "ground_truth": "other_damage",
-        "predicted": "leaf_miner_damage",
-        "farm_id": "FARM_SMK_1",
-        "tomato_variety": "Synthetic_Check",
+        "image_id": "IMG_0036",
+        "ground_truth": "healthy",
+        "predicted": "other_damage",
+        "farm_id": "BLOCK_3",
+        "tomato_variety": "unknown",
         "image_quality": "sharp",
-        "notes": "Synthetic training smoke test fixture"
+        "notes": "Field tag: Healthy leaflet check."
       },
       {
-        "image_id": "SMK_0008",
-        "ground_truth": "other_damage",
-        "predicted": "leaf_miner_damage",
-        "farm_id": "FARM_SMK_0",
-        "tomato_variety": "Synthetic_Check",
+        "image_id": "IMG_0039",
+        "ground_truth": "leaf_miner_damage",
+        "predicted": "healthy",
+        "farm_id": "BLOCK_3",
+        "tomato_variety": "unknown",
         "image_quality": "sharp",
-        "notes": "Synthetic training smoke test fixture"
+        "notes": "Field tag: Non-healthy / damaged leaflet; needs review for leaf miner vs other damage."
       },
       {
-        "image_id": "SMK_0011",
-        "ground_truth": "other_damage",
-        "predicted": "leaf_miner_damage",
-        "farm_id": "FARM_SMK_1",
-        "tomato_variety": "Synthetic_Check",
+        "image_id": "IMG_0043",
+        "ground_truth": "leaf_miner_damage",
+        "predicted": "healthy",
+        "farm_id": "BLOCK_3",
+        "tomato_variety": "unknown",
         "image_quality": "sharp",
-        "notes": "Synthetic training smoke test fixture"
+        "notes": "Field tag: Non-healthy / damaged leaflet; needs review for leaf miner vs other damage."
+      },
+      {
+        "image_id": "IMG_0048",
+        "ground_truth": "leaf_miner_damage",
+        "predicted": "healthy",
+        "farm_id": "BLOCK_3",
+        "tomato_variety": "unknown",
+        "image_quality": "sharp",
+        "notes": "Field tag: Non-healthy / damaged leaflet; needs review for leaf miner vs other damage."
+      },
+      {
+        "image_id": "IMG_0050",
+        "ground_truth": "healthy",
+        "predicted": "leaf_miner_damage",
+        "farm_id": "BLOCK_3",
+        "tomato_variety": "unknown",
+        "image_quality": "sharp",
+        "notes": "Field tag: Healthy leaflet check."
+      },
+      {
+        "image_id": "IMG_0060",
+        "ground_truth": "healthy",
+        "predicted": "leaf_miner_damage",
+        "farm_id": "BLOCK_3",
+        "tomato_variety": "unknown",
+        "image_quality": "sharp",
+        "notes": "Field tag: Healthy leaflet check."
+      },
+      {
+        "image_id": "IMG_0073",
+        "ground_truth": "leaf_miner_damage",
+        "predicted": "healthy",
+        "farm_id": "BLOCK_3",
+        "tomato_variety": "unknown",
+        "image_quality": "sharp",
+        "notes": "Field tag: Non-healthy / damaged leaflet; needs review for leaf miner vs other damage."
+      },
+      {
+        "image_id": "IMG_0093",
+        "ground_truth": "other_damage",
+        "predicted": "healthy",
+        "farm_id": "FARM_CANON_01",
+        "tomato_variety": "unknown",
+        "image_quality": "sharp",
+        "notes": "High-resolution camera field capture."
       }
     ],
     "known_limitations": [

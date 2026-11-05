@@ -67,28 +67,29 @@ def draw_damage_overlay(
             # Outline boundary
             cv2.polylines(overlay, [pts_arr], isClosed=True, color=col, thickness=2)
 
-            # Label region ID
-            reg_id = r.get("region_id", "R")
+            # Label region with A, B, C or ID badge
+            display_label = r.get("label") or r.get("region_id", "R")
             if len(poly_pts) > 0:
-                cx, cy = poly_pts[0]
+                # Use centroid if available, else first polygon point
+                cx = r.get("centroid", [poly_pts[0][0], poly_pts[0][1]])[0]
+                cy = r.get("centroid", [poly_pts[0][0], poly_pts[0][1]])[1]
+
+                # Draw high-contrast badge background circle
+                cv2.circle(overlay, (cx, cy), 13, (16, 31, 25), -1)
+                cv2.circle(overlay, (cx, cy), 13, (106, 230, 160), 2)
+                
+                # Text centered in badge
+                text_size = cv2.getTextSize(display_label, cv2.FONT_HERSHEY_SIMPLEX, 0.45, 2)[0]
+                tx = cx - text_size[0] // 2
+                ty = cy + text_size[1] // 2
                 cv2.putText(
                     overlay,
-                    reg_id,
-                    (cx, max(15, cy - 5)),
+                    display_label,
+                    (tx, ty),
                     cv2.FONT_HERSHEY_SIMPLEX,
-                    0.5,
-                    (255, 255, 255),
+                    0.45,
+                    (242, 250, 245),
                     thickness=2,
-                    lineType=cv2.LINE_AA,
-                )
-                cv2.putText(
-                    overlay,
-                    reg_id,
-                    (cx, max(15, cy - 5)),
-                    cv2.FONT_HERSHEY_SIMPLEX,
-                    0.5,
-                    (0, 0, 0),
-                    thickness=1,
                     lineType=cv2.LINE_AA,
                 )
 
@@ -150,4 +151,49 @@ def create_side_by_side_comparison(
 
     full_canvas = np.vstack([header, combined_body])
     return full_canvas
+
+
+def render_leaf_overlay(
+    image_bgr: np.ndarray,
+    leaf_mask: Optional[np.ndarray],
+    alpha: float = 0.35,
+) -> np.ndarray:
+    """Render green semi-transparent leaf canopy segmentation on original image."""
+    if leaf_mask is None or np.count_nonzero(leaf_mask) == 0:
+        return image_bgr.copy()
+
+    overlay = image_bgr.copy()
+    green_layer = np.zeros_like(image_bgr)
+    green_layer[:] = (46, 139, 87)  # Forest Green
+
+    mask_bool = leaf_mask > 0
+    overlay[mask_bool] = cv2.addWeighted(image_bgr[mask_bool], 1.0 - alpha, green_layer[mask_bool], alpha, 0)
+
+    # Outline
+    contours, _ = cv2.findContours((leaf_mask > 0).astype(np.uint8), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    cv2.drawContours(overlay, contours, -1, (34, 177, 76), thickness=2)
+    return overlay
+
+
+def render_mine_overlay(
+    image_bgr: np.ndarray,
+    mine_mask: Optional[np.ndarray],
+    alpha: float = 0.55,
+) -> np.ndarray:
+    """Render red semi-transparent mine damage segmentation on original image."""
+    if mine_mask is None or np.count_nonzero(mine_mask) == 0:
+        return image_bgr.copy()
+
+    overlay = image_bgr.copy()
+    red_layer = np.zeros_like(image_bgr)
+    red_layer[:] = (36, 28, 237)  # Vivid Red / Crimson
+
+    mask_bool = mine_mask > 0
+    overlay[mask_bool] = cv2.addWeighted(image_bgr[mask_bool], 1.0 - alpha, red_layer[mask_bool], alpha, 0)
+
+    # Outline
+    contours, _ = cv2.findContours((mine_mask > 0).astype(np.uint8), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    cv2.drawContours(overlay, contours, -1, (0, 0, 255), thickness=2)
+    return overlay
+
 

@@ -1,0 +1,82 @@
+{
+  "image_file": "INSP_20261105_024600_44601_PLANT_TOMATO_A07_orig.jpg",
+  "dimensions": [
+    3024,
+    4032
+  ],
+  "aspect_ratio": 0.75,
+  "unet_probs_stats": {
+    "min": 0.4739568531513214,
+    "max": 0.506858766078949,
+    "mean": 0.4924251139163971,
+    "median": 0.4941823482513428,
+    "std": 0.00940109882503748
+  },
+  "yolo_detections": [
+    {
+      "index": 1,
+      "class": "mine_damage",
+      "confidence": 0.2628999948501587,
+      "bbox": [
+        1200,
+        2377,
+        3018,
+        4024
+      ],
+      "area_pixels": 2275694,
+      "area_pct_of_frame": 18.66
+    },
+    {
+      "index": 2,
+      "class": "mine_damage",
+      "confidence": 0.2578999996185303,
+      "bbox": [
+        1292,
+        3301,
+        3007,
+        4027
+      ],
+      "area_pixels": 1064006,
+      "area_pct_of_frame": 8.73
+    },
+    {
+      "index": 3,
+      "class": "mine_damage",
+      "confidence": 0.16419999301433563,
+      "bbox": [
+        12,
+        2043,
+        2265,
+        4018
+      ],
+      "area_pixels": 2541117,
+      "area_pct_of_frame": 20.84
+    },
+    {
+      "index": 4,
+      "class": "mine_damage",
+      "confidence": 0.12219999730587006,
+      "bbox": [
+        2339,
+        3250,
+        3020,
+        4028
+      ],
+      "area_pixels": 288783,
+      "area_pct_of_frame": 2.37
+    }
+  ],
+  "intersection": {
+    "leaf_pixels": 4214268,
+    "raw_mine_pixels": 4457927,
+    "intersected_pixels": 1878504,
+    "damage_percentage": 44.57
+  },
+  "pipeline_result": {
+    "damage_detected": true,
+    "damage_percentage": 44.57,
+    "severity_tier": null,
+    "decision": "mine_detected_species_uncertain",
+    "region_count": 0
+  }
+}

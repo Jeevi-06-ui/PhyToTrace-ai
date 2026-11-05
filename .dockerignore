@@ -1,0 +1,13 @@
+**
+!Dockerfile
+!configs/
+!configs/**
+!src/
+!src/**
+!models/
+!models/checkpoints/
+!models/checkpoints/leaf_segmenter/
+!models/checkpoints/leaf_segmenter/leaf_unet_best.pt
+!models/checkpoints/mine_segmenter/
+!models/checkpoints/mine_segmenter/best.pt
+**/__pycache__/

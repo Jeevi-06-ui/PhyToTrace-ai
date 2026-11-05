@@ -3,7 +3,7 @@ pipeline:
   device: "auto"  # 'mps', 'cpu', or 'auto'
   max_image_dimension: 1920
   quality_check:
-    blur_threshold: 100.0
+    blur_threshold: 20.0
     brightness_min: 30.0
     brightness_max: 235.0
 
@@ -20,7 +20,7 @@ pipeline:
   mine_segmenter:
     enabled: true
     weights_path: "models/checkpoints/mine_segmenter/best.pt"
-    confidence_threshold: 0.25
+    confidence_threshold: 0.10
 
   species_classifier:
     enabled: true

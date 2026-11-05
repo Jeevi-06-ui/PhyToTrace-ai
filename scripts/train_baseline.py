@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""PhytoTrace AI — Baseline Classifier Training CLI."""
+"""PhytoTrace AI — Baseline Classifier Training CLI with Explicit Training Controls."""
 
 import argparse
 import json
@@ -15,7 +15,19 @@ def main():
     parser.add_argument("--splits", type=str, default="data/splits/splits.json", help="Path to split manifest")
     parser.add_argument("--metadata", type=str, default="data/metadata/metadata.csv", help="Path to metadata CSV")
     parser.add_argument("--image_dir", type=str, default="data/raw", help="Path to raw image directory")
-    parser.add_argument("--epochs", type=int, default=None, help="Override finetuning epochs")
+    
+    # Explicit Training Controls (Task 2)
+    parser.add_argument("--head-epochs", "--head_epochs", type=int, default=None, help="Stage A head epochs (default: 5)")
+    parser.add_argument("--finetune-epochs", "--finetune_epochs", type=int, default=None, help="Stage B backbone fine-tuning epochs (default: 20)")
+    parser.add_argument("--epochs", type=int, default=None, help="Total epochs or fallback Stage B fine-tuning epochs")
+    parser.add_argument("--batch-size", "--batch_size", type=int, default=None, help="Training batch size (default: 16)")
+    parser.add_argument("--learning-rate", "--learning_rate", "--lr", type=float, default=None, help="Stage A head learning rate (default: 0.001)")
+    parser.add_argument("--finetune-lr", "--finetune_lr", type=float, default=None, help="Stage B backbone learning rate (default: 0.0001)")
+    parser.add_argument("--patience", type=int, default=None, help="Early stopping patience in epochs (default: 6)")
+    parser.add_argument("--device", type=str, default=None, help="Compute device ('mps', 'cpu', or 'auto')")
+    parser.add_argument("--seed", type=int, default=None, help="Random seed for reproducibility (default: 42)")
+    parser.add_argument("--class-weights", "--class_weights", dest="use_class_weights", action="store_true", default=True, help="Use inverse class frequency weighting in CrossEntropyLoss")
+    parser.add_argument("--no-class-weights", dest="use_class_weights", action="store_false", help="Disable class weighting")
     parser.add_argument(
         "--smoke_test",
         action="store_true",
@@ -55,7 +67,7 @@ def main():
         print(f"  - Splits file  : {split_p} (Exists: {split_p.is_file()})")
         print("-" * 65)
         print("Action Required:")
-        print("  1. Ingest real tomato leaf images: python scripts/ingest_images.py --source_dir <your_images_folder>")
+        print("  1. Ingest real tomato leaf images: python scripts/ingest_images.py")
         print("  2. Validate dataset readiness  : python scripts/validate_dataset.py")
         print("  3. Create group-aware splits   : python scripts/make_splits.py")
         print("  (Tip: Run 'python scripts/train_baseline.py --smoke_test' to verify pipeline mechanics)")
@@ -69,14 +81,27 @@ def main():
             metadata_csv_path=args.metadata,
             image_dir=args.image_dir,
             override_epochs=args.epochs,
+            head_epochs=args.head_epochs,
+            finetune_epochs=args.finetune_epochs,
+            batch_size=args.batch_size,
+            learning_rate=args.learning_rate,
+            finetune_lr=args.finetune_lr,
+            patience=args.patience,
+            device_str=args.device,
+            seed_val=args.seed,
+            use_class_weights=args.use_class_weights,
         )
         print("=" * 65)
         print("✅ TRAINING COMPLETE!")
+        print(f"Experiment ID           : {manifest.get('experiment_id')}")
+        print(f"Best Validation Epoch   : {manifest.get('best_epoch')}")
         print(f"Best Validation Macro F1: {manifest.get('best_val_macro_f1', 0.0):.4f}")
+        print(f"Best Validation Loss    : {manifest.get('best_val_loss', 0.0):.4f}")
         print(f"Best Model Checkpoint   : {manifest.get('best_checkpoint')}")
         print("=" * 65)
     except Exception as e:
         print(f"❌ Training aborted or blocked: {e}")
+        raise e
 
 
 if __name__ == "__main__":

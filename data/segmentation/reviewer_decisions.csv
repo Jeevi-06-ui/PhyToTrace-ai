@@ -1,0 +1,19 @@
+image_id,original_filename,split_partition,visible_damage_type,reviewer_id,decision,original_metadata_class,corrected_metadata_class,rationale,reviewed_timestamp
+IMG_0001,5558326.jpg,train,leaf_miner_damage,expert_pathologist_01,confirmed_mine,leaf_miner_damage,leaf_miner_damage,Confirmed blotch mine galleries caused by Tuta absoluta.,2026-11-04T18:15:00
+IMG_0002,5558327.jpg,val,leaf_miner_damage,expert_pathologist_01,confirmed_mine,leaf_miner_damage,leaf_miner_damage,Confirmed serpentine mine trace caused by Liriomyza trifolii.,2026-11-04T18:15:00
+IMG_0003,5595347.jpg,test,other_damage,expert_pathologist_01,confirmed_mine,other_damage,leaf_miner_damage,Entomological reference leaf: 5 confirmed mine damage regions co-occurring with foliar blemishes.,2026-11-04T18:15:00
+IMG_0004,5595348.jpg,train,other_damage,expert_pathologist_01,confirmed_mine,other_damage,leaf_miner_damage,Mixed damage leaf: Entomological review confirms 2 genuine serpentine mines co-occurring with abiotic damage.,2026-11-04T18:15:00
+IMG_0006,5595350.jpg,train,leaf_miner_damage,expert_pathologist_01,confirmed_mine,leaf_miner_damage,leaf_miner_damage,Confirmed serpentine mine track.,2026-11-04T18:15:00
+IMG_0007,5595351.jpg,test,leaf_miner_damage,expert_pathologist_01,confirmed_mine,leaf_miner_damage,leaf_miner_damage,Confirmed single serpentine mine.,2026-11-04T18:15:00
+IMG_0008,5595360.jpg,train,leaf_miner_damage,expert_pathologist_01,confirmed_mine,leaf_miner_damage,leaf_miner_damage,Extensive mixed blotch and serpentine mine cluster accurately traced.,2026-11-04T18:15:00
+IMG_0009,BLK_3_1002_PL009_NH.JPG,train,leaf_miner_damage,expert_pathologist_01,confirmed_mine,leaf_miner_damage,leaf_miner_damage,Confirmed multiple serpentine mines on field-collected leaf.,2026-11-04T18:15:00
+IMG_0010,BLK_3_1002_PL010_H.JPG,train,healthy,jeevithp,confirmed_negative,healthy,healthy,Visually reviewed; no leaf mines visible.,2026-11-04T22:04:55.654917
+IMG_0011,BLK_3_1002_PL014_NH.JPG,test,leaf_miner_damage,expert_pathologist_01,confirmed_mine,leaf_miner_damage,leaf_miner_damage,Extensive mine network confirmed.,2026-11-04T18:15:00
+IMG_0012,BLK_3_1002_PL015_NH.JPG,train,leaf_miner_damage,expert_pathologist_01,confirmed_mine,leaf_miner_damage,leaf_miner_damage,Containment violation resolved in CVAT (0.00% outside leaf boundary). 25 confirmed serpentine mine galleries verified.,2026-11-04T20:02:06.379381
+IMG_0014,BLK_3_1002_PL019_NH.JPG,train,leaf_miner_damage,expert_pathologist_01,confirmed_mine,leaf_miner_damage,leaf_miner_damage,Confirmed 15 distinct mine damage regions.,2026-11-04T18:15:00
+IMG_0015,BLK_3_1002_PL021_H.JPG,train,healthy,jeevithp,confirmed_negative,healthy,healthy,Visually reviewed; no leaf mines visible.,2026-11-04T22:04:55.889013
+IMG_0020,BLK_3_1002_PL027_H.JPG,val,healthy,expert_pathologist_01,needs_correction,healthy,healthy,Field tag verifies healthy leaflet. 17 mine polygons in CVAT are false positives. Delete in CVAT to unlock as verified negative.,2026-11-04T18:15:00
+IMG_0022,BLK_3_1002_PL029_H.JPG,train,healthy,jeevithp,confirmed_negative,healthy,healthy,Visually reviewed; no leaf mines visible.,2026-11-04T22:04:56.114860
+IMG_0024,BLK_3_1002_PL031_H.JPG,test,healthy,expert_pathologist_01,needs_correction,healthy,healthy,Field tag verifies healthy leaflet. 8 mine polygons in CVAT are false positives. Delete in CVAT to unlock as verified negative.,2026-11-04T18:15:00
+IMG_0028,BLK_3_1002_PL035_NH.JPG,val,leaf_miner_damage,expert_pathologist_01,confirmed_mine,leaf_miner_damage,leaf_miner_damage,Confirmed 6 distinct mine regions.,2026-11-04T18:15:00
+IMG_0095,IMG_2162.JPG,val,other_damage,expert_pathologist_01,confirmed_mine,other_damage,leaf_miner_damage,Field capture with 9 confirmed mine tracks. Containment is now within tolerance.,2026-11-04T18:15:00

@@ -1,19 +1,16 @@
 """Training pipeline for lightweight leaf segmentation U-Net."""
 
-import json
 from pathlib import Path
-from typing import Dict, List, Optional
+from typing import Dict, List
 import numpy as np
 import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader
 
-from phytotrace.config import load_yaml_config
 from phytotrace.data.dataset import TomatoLeafSegmentationDataset
 from phytotrace.device import get_device
 from phytotrace.evaluation.metrics import compute_binary_segmentation_metrics
 from phytotrace.models.leaf_segmenter import LightweightUNet
-from phytotrace.training.checkpointing import save_checkpoint
 from phytotrace.utils.logging import get_logger
 from phytotrace.utils.paths import resolve_path
 
@@ -42,25 +39,22 @@ class BCEDiceLoss(nn.Module):
 def train_leaf_segmenter_pipeline(
     image_paths: List[Path],
     mask_paths: List[Path],
+    val_image_paths: List[Path],
+    val_mask_paths: List[Path],
     epochs: int = 20,
     batch_size: int = 8,
     lr: float = 0.001,
-    save_dir: str = "models/checkpoints/leaf_segmenter",
+    save_dir: str = "models/checkpoints/leaf_experiment",
 ) -> Dict[str, any]:
     """Train the lightweight U-Net for leaf canopy segmentation."""
     device = get_device("auto")
     logger.info("Using device: %s for leaf segmentation training.", device)
 
-    if not image_paths or not mask_paths or len(image_paths) != len(mask_paths):
-        raise ValueError("Must provide non-empty equal lists of image and mask paths.")
-
-    # Split 80/20 train/val
-    split_idx = max(1, int(len(image_paths) * 0.8))
-    train_imgs, val_imgs = image_paths[:split_idx], image_paths[split_idx:]
-    train_masks, val_masks = mask_paths[:split_idx], mask_paths[split_idx:]
-
-    train_ds = TomatoLeafSegmentationDataset(train_imgs, train_masks)
-    val_ds = TomatoLeafSegmentationDataset(val_imgs, val_masks)
+    if set(map(resolve_path, image_paths)) & set(map(resolve_path, val_image_paths)):
+        raise ValueError("Training and validation photographs overlap.")
+    torch.manual_seed(42)
+    train_ds = TomatoLeafSegmentationDataset(image_paths, mask_paths, augment=True)
+    val_ds = TomatoLeafSegmentationDataset(val_image_paths, val_mask_paths)
 
     train_loader = DataLoader(train_ds, batch_size=batch_size, shuffle=True)
     val_loader = DataLoader(val_ds, batch_size=batch_size, shuffle=False)
@@ -71,8 +65,13 @@ def train_leaf_segmenter_pipeline(
 
     save_path = resolve_path(save_dir)
     save_path.mkdir(parents=True, exist_ok=True)
+    optimizer_steps = 0
     best_dice = -1.0
+    best_iou = 0.0
     best_ckpt = save_path / "leaf_unet_best.pt"
+
+    if best_ckpt.exists():
+        raise FileExistsError(f"Choose a new run directory: {best_ckpt} already exists")
 
     for epoch in range(1, epochs + 1):
         model.train()
@@ -84,6 +83,7 @@ def train_leaf_segmenter_pipeline(
             loss = criterion(logits, y)
             loss.backward()
             optimizer.step()
+            optimizer_steps += 1
             train_loss += loss.item() * len(x)
 
         avg_train_loss = train_loss / len(train_ds)
@@ -91,22 +91,31 @@ def train_leaf_segmenter_pipeline(
         # Validation
         model.eval()
         val_dices = []
+        val_ious = []
+        val_loss = 0.0
         with torch.no_grad():
             for x, y in val_loader:
                 x, y = x.to(device), y.to(device)
                 logits = model(x)
+                val_loss += criterion(logits, y).item() * len(x)
                 probs = torch.sigmoid(logits).cpu().numpy()
                 targets = y.cpu().numpy()
                 for p, t in zip(probs, targets):
                     metrics = compute_binary_segmentation_metrics(p > 0.5, t > 0.5)
                     val_dices.append(metrics["dice"])
+                    val_ious.append(metrics["iou"])
 
         avg_val_dice = float(np.mean(val_dices)) if val_dices else 0.0
-        logger.info("Epoch %d/%d | Train Loss: %.4f | Val Dice: %.4f", epoch, epochs, avg_train_loss, avg_val_dice)
+        avg_val_iou = float(np.mean(val_ious))
+        logger.info(
+            "Epoch %d/%d | Steps: %d | Train BCE/Dice: %.4f | Val BCE/Dice: %.4f | Dice: %.4f | IoU: %.4f",
+            epoch, epochs, optimizer_steps, avg_train_loss, val_loss / len(val_ds), avg_val_dice, avg_val_iou,
+        )
 
         if avg_val_dice > best_dice:
-            best_dice = avg_val_dice
+            best_dice, best_iou = avg_val_dice, avg_val_iou
             torch.save(model.state_dict(), best_ckpt)
 
-    return {"status": "trained", "best_val_dice": best_dice, "checkpoint": str(best_ckpt)}
+    return {"status": "trained", "best_val_dice": best_dice, "best_val_iou": best_iou,
+            "optimizer_steps": optimizer_steps, "checkpoint": str(best_ckpt)}
 

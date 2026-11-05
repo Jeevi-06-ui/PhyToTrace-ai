@@ -34,7 +34,7 @@ dataset:
     growth_stages: ["vegetative", "flowering", "fruiting", "harvesting", "unknown"]
     image_view_types: ["whole_leaf", "close_up_mine", "canopy_context", "dorsal", "ventral"]
     image_qualities: ["sharp", "slightly_blurry", "poor_lighting", "glare", "severe_blur"]
-    visible_damage_types: ["none", "leaf_miner_mine", "chewing", "blight", "punctures", "curling", "other"]
+    visible_damage_types: ["healthy", "leaf_miner_damage", "other_damage", "unlabelled", "none", "leaf_miner_mine", "chewing", "blight", "punctures", "curling", "other"]
     suspected_pests: ["none", "tuta_absoluta", "liriomyza_spp", "mixed", "other", "unknown"]
     confirmed_pests: ["none", "tuta_absoluta", "liriomyza_spp", "mixed", "unconfirmed"]
     confirmation_methods: ["none", "larval_microscopy", "adult_morphology", "expert_agronomist", "molecular_pcr", "pheromone_trap_correlation"]

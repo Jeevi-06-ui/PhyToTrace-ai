@@ -1,31 +1,64 @@
-# Leaf & Mine Segmentation Configuration
-leaf_segmentation:
-  architecture: "unet_light"
-  encoder: "mobilenet_v3_small"
-  in_channels: 3
-  num_classes: 1  # Binary: leaf vs background
-  input_size: [256, 256]
-  loss: "bce_dice"
-  bce_weight: 0.5
-  dice_weight: 0.5
-  batch_size: 8
-  learning_rate: 0.001
-  epochs: 20
-  save_dir: "models/checkpoints/leaf_segmenter"
-
-mine_segmentation:
-  framework: "yolo_seg"
-  pretrained_weights: "yolo11n-seg.pt"  # Ultralytics lightweight nano seg model
-  input_size: 640
-  batch_size: 4
-  epochs: 30
+# PhytoTrace AI — Phase 3 Leaf & Mine Segmentation Configuration
+model:
+  task: "instance_segmentation"
+  primary_architecture: "yolov8n-seg"  # Ultralytics lightweight instance segmentation
+  fallback_architecture: "lightweight_unet"  # Custom PyTorch U-Net for leaf surface
+  num_classes: 2
   classes:
-    0: "leaf_miner_damage"
+    0: "leaf"
+    1: "mine_damage"
+  input_size: [640, 640]
   confidence_threshold: 0.25
   iou_threshold: 0.45
-  save_dir: "models/checkpoints/mine_segmenter"
 
-damage_assessment:
-  min_leaf_pixels: 500
-  warning_occlusion_threshold: 0.40  # Flag if leaf is partially out of frame
+tiling:
+  enabled: true
+  tile_size: [640, 640]
+  overlap_px: 128
+  mode: "tiled"  # 'tiled' for high-resolution small mine preservation, 'full_image' for fast mobile preview
+  blend_mode: "max"  # 'max' (union) or 'average'
 
+training_gate:
+  minimum_verified_train_samples: 10
+  minimum_verified_leaf_masks: 10
+  require_containment_validation: true
+  isolate_test_partition: true  # Strict isolation of frozen 15-sample test partition
+
+training:
+  seed: 42
+  batch_size: 8
+  num_workers: 2
+  epochs: 50
+  lr: 0.0005
+  weight_decay: 0.0005
+  early_stopping_patience: 10
+  device: "mps"  # Apple Metal Performance Shaders
+  loss:
+    bce_weight: 0.5
+    dice_weight: 0.5
+
+augmentation:
+  random_horizontal_flip: 0.5
+  random_vertical_flip: 0.5
+  random_rotation_degrees: 15
+  color_jitter:
+    brightness: 0.15
+    contrast: 0.15
+    saturation: 0.10
+    hue: 0.05
+  normalize:
+    mean: [0.485, 0.456, 0.406]
+    std: [0.229, 0.224, 0.225]
+
+data:
+  catalog_csv: "data/segmentation/catalog.csv"
+  pilot_manifest_csv: "data/segmentation/pilot_manifest.csv"
+  masks_dir: "data/segmentation/masks"
+  leaf_mask_dir: "data/segmentation/masks/leaf"
+  mine_mask_dir: "data/segmentation/masks/mine"
+  splits_json: "data/splits/splits.json"
+
+checkpoints:
+  save_dir: "models/checkpoints/segmentation"
+  best_leaf_model: "leaf_unet_best.pt"
+  best_mine_model: "mine_yolo_best.pt"

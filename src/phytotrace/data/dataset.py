@@ -81,40 +81,39 @@ class TomatoLeafClassificationDataset(Dataset):
 
 
 class TomatoLeafSegmentationDataset(Dataset):
-    """Dataset for binary leaf segmentation (leaf vs background)."""
+    """Reviewed, aligned image/mask pairs in the U-Net checkpoint's RGB [0, 1] space."""
 
-    def __init__(
-        self,
-        image_paths: List[Path],
-        mask_paths: Optional[List[Path]] = None,
-        target_size: Tuple[int, int] = (256, 256),
-    ):
+    def __init__(self, image_paths, mask_paths, target_size=(256, 256), augment=False):
+        if not image_paths or len(image_paths) != len(mask_paths):
+            raise ValueError("Each image needs a reviewed leaf mask.")
         self.image_paths = [resolve_path(p) for p in image_paths]
-        self.mask_paths = [resolve_path(p) for p in mask_paths] if mask_paths else None
+        self.mask_paths = [resolve_path(p) for p in mask_paths]
         self.target_size = target_size
+        self.augment = augment
 
-    def __len__(self) -> int:
+    def __len__(self):
         return len(self.image_paths)
 
-    def __getitem__(self, idx: int) -> Tuple[torch.Tensor, torch.Tensor]:
-        img_path = self.image_paths[idx]
+    def __getitem__(self, idx):
+        img_path, mask_path = self.image_paths[idx], self.mask_paths[idx]
         bgr = check_and_fix_exif_orientation(img_path)
-        if bgr is None:
-            raise ValueError(f"Failed to read image {img_path}")
-            
-        rgb = cv2.cvtColor(bgr, cv2.COLOR_BGR2RGB)
-        resized_rgb = cv2.resize(rgb, self.target_size, interpolation=cv2.INTER_LINEAR)
-        img_tensor = torch.from_numpy(resized_rgb).permute(2, 0, 1).float() / 255.0
+        mask = cv2.imread(str(mask_path), cv2.IMREAD_GRAYSCALE)
+        if bgr is None or mask is None or mask.shape != bgr.shape[:2]:
+            raise ValueError(f"Missing or misaligned leaf mask: {img_path.name}")
+        values = set(np.unique(mask).tolist())
+        if values not in ({0, 1}, {0, 255}):
+            raise ValueError(f"Expected a binary mask with foreground and background: {mask_path.name}")
 
-        if self.mask_paths and idx < len(self.mask_paths) and self.mask_paths[idx].exists():
-            mask_arr = cv2.imread(str(self.mask_paths[idx]), cv2.IMREAD_GRAYSCALE)
-            resized_mask = cv2.resize(mask_arr, self.target_size, interpolation=cv2.INTER_NEAREST)
-            mask_tensor = (torch.from_numpy(resized_mask).float() / 255.0).clamp(0, 1).unsqueeze(0)
-        else:
-            # Fallback zero mask if no mask supplied
-            mask_tensor = torch.zeros((1, self.target_size[0], self.target_size[1]), dtype=torch.float32)
-
-        return img_tensor, mask_tensor
+        rgb = cv2.cvtColor(cv2.resize(bgr, self.target_size), cv2.COLOR_BGR2RGB)
+        mask = cv2.resize(mask, self.target_size, interpolation=cv2.INTER_NEAREST)
+        image = torch.from_numpy(rgb).permute(2, 0, 1).float() / 255.0
+        target = torch.from_numpy(mask > 0).float().unsqueeze(0)
+        if self.augment:
+            for axis in (-1, -2):
+                if torch.rand(()) < 0.5:
+                    image, target = image.flip(axis), target.flip(axis)
+            image = (image * (0.85 + 0.30 * torch.rand(()))).clamp(0, 1)
+        return image, target
 
 
 class TomatoDamageEvidenceDataset(Dataset):

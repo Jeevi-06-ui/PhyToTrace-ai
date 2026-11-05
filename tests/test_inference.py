@@ -45,3 +45,23 @@ def test_pipeline_missing_weights_fallback(test_pipeline):
     assert res["tuta_evidence"] is None or isinstance(res["tuta_evidence"], float)
     assert res["liriomyza_evidence"] is None or isinstance(res["liriomyza_evidence"], float)
 
+
+
+def test_reviewer_confirmed_negative_cannot_be_measured_with_flat_leaf_checkpoint(test_pipeline):
+    """Exercise the real legacy weights and real negative, including manual focus."""
+    from pathlib import Path
+    from phytotrace.models.leaf_segmenter import LeafSegmenter
+
+    legacy_ckpt = Path("models/checkpoints/leaf_segmenter/leaf_unet_best.pt.bak")
+    ckpt = str(legacy_ckpt) if legacy_ckpt.exists() else "models/checkpoints/leaf_segmenter/leaf_unet_best.pt"
+    test_pipeline.leaf_segmenter = LeafSegmenter(ckpt, str(test_pipeline.device))
+    path = Path("data/raw/original_photos/BLK_3_1002_PL010_H.JPG")
+    if not path.exists() or not test_pipeline.leaf_segmenter.is_trained or not test_pipeline.mine_segmenter.is_trained:
+        pytest.skip("Local reviewer photo and checkpoints required")
+    for crop in (None, [100, 100, 1300, 1100]):
+        result = test_pipeline.predict(path, crop_box=crop)
+        assert result["failure_classification"] in {"LEAF_MASK_UNRELIABLE", "LEAF_NOT_DETECTED"}
+        assert result["damage_percentage"] is None
+        assert result["damage_detected"] is None
+        assert result["damage_regions"] == []
+        assert result["diagnostic_telemetry"]["mine_segmenter"]["raw_candidates_count"] > 0

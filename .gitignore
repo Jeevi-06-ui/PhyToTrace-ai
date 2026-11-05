@@ -4,7 +4,7 @@ __pycache__/
 *$py.class
 *.so
 
-# C extensions
+# C extensions & Virtual Environments
 .Python
 env/
 venv/
@@ -13,7 +13,37 @@ ENV/
 env.bak/
 venv.bak/
 
-# Project large data files & checkpoints (Keep data safe locally, out of Git)
+# Environment Variables & Secrets (CRITICAL: Never commit to Git)
+.env
+.env.local
+.env.production
+.env.staging
+.env.*.local
+*.env
+
+# Credentials & Private Keys
+*firebase-service-account*.json
+firebase-credentials.json
+*.pem
+*.key
+*.p12
+*.crt
+
+# Local Databases (Keep offline databases local)
+*.db
+*.sqlite
+*.sqlite3
+data/phytotrace.db
+data/*.db
+
+# Sensitive Uploaded Images & Local Asset Storage
+data/inspections/
+data/storage/
+data/yolo_segmentation/
+*.zip
+PhytoTrace_CVAT_Pilot.zip
+
+# Project large raw data files & annotations (Keep raw data safe locally)
 data/raw/*
 !data/raw/.gitkeep
 data/interim/*
@@ -27,6 +57,8 @@ data/annotations/*
 data/samples/*
 !data/samples/.gitkeep
 
+# Models & Checkpoints
+# Note: Checkpoints are preserved locally and deployed via Cloudinary/R2 or Git LFS.
 models/checkpoints/*
 !models/checkpoints/.gitkeep
 models/exports/*
@@ -35,24 +67,52 @@ models/exports/*
 *.pth
 *.onnx
 
-# Experiments & runs
+# Frontend Next.js & Node.js
+frontend/.next/
+frontend/out/
+frontend/node_modules/
+frontend/.env.local
+frontend/.env.production
+frontend/.env.development
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Experiments, Runs & Logs
 experiments/*
 !experiments/.gitkeep
 runs/
+logs/
+*.log
 
 # IDE & OS
 .DS_Store
+.AppleDouble
+.LSOverride
 .idea/
 .vscode/
 *.swp
 *.swo
 
-# Environment variables
-.env
-.env.local
-
-# PyTest & cache
+# PyTest & Coverage
 .pytest_cache/
 .coverage
 htmlcov/
 
+# Local ASTRA experiment exports and browser storage
+data/astra_annotation_batches/
+data/astra_yolo_experiment/
+data/astra_browser/
+frontend/.next-astra/
+
+frontend/.next-astra-build/
+# Real-photo diagnostics stay local until the project owner approves publication.
+reports/astra_cv/
+
+frontend/.next-evidence/
+reports/evidence_repair/
+
+# Reviewed-crop research outputs
+data/astra_crop_source/
+data/astra_crop_experiment/
+reports/yolo_crop_experiment/

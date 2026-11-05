@@ -1,0 +1,118 @@
+{
+  "timestamp": "2026-11-03T14:45:19.202921",
+  "total_images": 95,
+  "source_statistics": {
+    "ARCHIVE_REF": {
+      "total_images": 8,
+      "percentage": 8.42,
+      "healthy": 0,
+      "leaf_miner_damage": 5,
+      "other_damage": 3,
+      "unlabelled": 0,
+      "independent_plants": 8,
+      "sessions": [
+        "SESS_ENTOMOLOGY_ARCHIVE"
+      ]
+    },
+    "BLOCK_3": {
+      "total_images": 81,
+      "percentage": 85.26,
+      "healthy": 35,
+      "leaf_miner_damage": 43,
+      "other_damage": 3,
+      "unlabelled": 0,
+      "independent_plants": 81,
+      "sessions": [
+        "SESS_1002"
+      ]
+    },
+    "FARM_CANON_01": {
+      "total_images": 6,
+      "percentage": 6.32,
+      "healthy": 2,
+      "leaf_miner_damage": 0,
+      "other_damage": 4,
+      "unlabelled": 0,
+      "independent_plants": 6,
+      "sessions": [
+        "SESS_FIELD_CAMERA"
+      ]
+    }
+  },
+  "split_metadata": {
+    "grouping_column": "_physical_plant_id",
+    "grouping_rationale": "fallback_from_skewed_farm_id",
+    "stratification_column": "visible_damage_type",
+    "train_count": 65,
+    "val_count": 15,
+    "test_count": 15,
+    "train_groups_count": 65,
+    "val_groups_count": 15,
+    "test_groups_count": 15,
+    "train_ratio_actual": 0.6842,
+    "val_ratio_actual": 0.1579,
+    "test_ratio_actual": 0.1579,
+    "seed": 42
+  },
+  "partitions": {
+    "train": {
+      "count": 65,
+      "ratio": 0.6842,
+      "class_distribution": {
+        "leaf_miner_damage": 34,
+        "healthy": 25,
+        "other_damage": 6
+      },
+      "plants_count": 65,
+      "source_distribution": {
+        "BLOCK_3": 57,
+        "ARCHIVE_REF": 5,
+        "FARM_CANON_01": 3
+      }
+    },
+    "val": {
+      "count": 15,
+      "ratio": 0.1579,
+      "class_distribution": {
+        "leaf_miner_damage": 7,
+        "healthy": 6,
+        "other_damage": 2
+      },
+      "plants_count": 15,
+      "source_distribution": {
+        "BLOCK_3": 12,
+        "FARM_CANON_01": 2,
+        "ARCHIVE_REF": 1
+      }
+    },
+    "test": {
+      "count": 15,
+      "ratio": 0.1579,
+      "class_distribution": {
+        "leaf_miner_damage": 7,
+        "healthy": 6,
+        "other_damage": 2
+      },
+      "plants_count": 15,
+      "source_distribution": {
+        "BLOCK_3": 12,
+        "ARCHIVE_REF": 2,
+        "FARM_CANON_01": 1
+      }
+    }
+  },
+  "leakage_verification": {
+    "status": "PASSED",
+    "zero_image_leakage": true,
+    "zero_plant_leakage": true,
+    "zero_leaf_leakage": true,
+    "zero_duplicate_leakage": true,
+    "all_classes_present": true
+  },
+  "scientific_notes": [
+    "Source 'BLOCK_3' contains 85.3% of the entire dataset; coarse splitting on farm_id would produce severe partition starvation (e.g. 6/8/81).",
+    "Splitting is conducted at the individual physical plant level (farm_id + plant_id) using stratified sampling to guarantee balanced class distribution without leakage.",
+    "The 10 'other_damage' samples are distributed 6 in train, 2 in val, and 2 in test.",
+    "With 95 total images, this dataset represents a pilot experiment for MobileNetV3-Small baseline evaluation, not proof of field-ready generalizability across unseen agroecological regions."
+  ]
+}

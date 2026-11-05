@@ -1,0 +1,916 @@
+{
+  "5558326": {
+    "image_id": "5558326",
+    "dimensions": [
+      384,
+      288
+    ],
+    "total_pixels": 110592,
+    "failure_classification": "VALID_MINE_DETECTION",
+    "damage_detected": true,
+    "damage_percentage": 19.38,
+    "regions_count": 1,
+    "leaf_pixels": 22558,
+    "damage_pixels": 4371,
+    "diagnostic_telemetry": {
+      "failure_classification": "VALID_MINE_DETECTION",
+      "leaf_segmenter": {
+        "method": "heuristic_fallback",
+        "leaf_pixel_count": 22558,
+        "leaf_area_ratio": 0.204,
+        "diagnostics": {
+          "logits_min": -0.1083,
+          "logits_max": 0.0328,
+          "logits_mean": -0.0511,
+          "logits_std": 0.0262,
+          "probs_min": 0.473,
+          "probs_max": 0.5082,
+          "probs_mean": 0.4872,
+          "probs_std": 0.0065,
+          "prob_spread": 0.0352,
+          "probs_gt_half_count": 3834,
+          "status": "UNRELIABLE_FALLBACK"
+        }
+      },
+      "mine_segmenter": {
+        "raw_candidates_count": 12,
+        "accepted_candidates_count": 1,
+        "rejected_candidates_count": 11,
+        "operating_confidence_threshold": 0.05
+      },
+      "rejected_candidates": [
+        {
+          "candidate_id": "RAW_01",
+          "bbox": [
+            180,
+            208,
+            251,
+            287
+          ],
+          "confidence": 0.21279999613761902,
+          "raw_pixels": 3268,
+          "in_leaf_pixels": 85,
+          "leaf_containment_pct": 2.6,
+          "reasons": [
+            "POOR_LEAF_CONTAINMENT (2.6% < 58%)"
+          ]
+        },
+        {
+          "candidate_id": "RAW_02",
+          "bbox": [
+            4,
+            2,
+            343,
+            286
+          ],
+          "confidence": 0.13910000026226044,
+          "raw_pixels": 88073,
+          "in_leaf_pixels": 15632,
+          "leaf_containment_pct": 17.75,
+          "reasons": [
+            "EXCEEDS_FRAME_RATIO (87.1% > 35%)",
+            "POOR_LEAF_CONTAINMENT (17.7% < 58%)"
+          ]
+        },
+        {
+          "candidate_id": "RAW_03",
+          "bbox": [
+            218,
+            0,
+            383,
+            176
+          ],
+          "confidence": 0.11779999732971191,
+          "raw_pixels": 19878,
+          "in_leaf_pixels": 1908,
+          "leaf_containment_pct": 9.6,
+          "reasons": [
+            "POOR_LEAF_CONTAINMENT (9.6% < 58%)"
+          ]
+        },
+        {
+          "candidate_id": "RAW_04",
+          "bbox": [
+            83,
+            207,
+            251,
+            288
+          ],
+          "confidence": 0.10809999704360962,
+          "raw_pixels": 3963,
+          "in_leaf_pixels": 78,
+          "leaf_containment_pct": 1.97,
+          "reasons": [
+            "POOR_LEAF_CONTAINMENT (2.0% < 58%)"
+          ]
+        },
+        {
+          "candidate_id": "RAW_05",
+          "bbox": [
+            0,
+            142,
+            127,
+            287
+          ],
+          "confidence": 0.07720000296831131,
+          "raw_pixels": 16457,
+          "in_leaf_pixels": 0,
+          "leaf_containment_pct": 0.0,
+          "reasons": [
+            "POOR_LEAF_CONTAINMENT (0.0% < 58%)",
+            "BELOW_MIN_LESION_SIZE (0 px < 50 px)"
+          ]
+        },
+        {
+          "candidate_id": "RAW_07",
+          "bbox": [
+            167,
+            200,
+            381,
+            288
+          ],
+          "confidence": 0.06520000100135803,
+          "raw_pixels": 5762,
+          "in_leaf_pixels": 1560,
+          "leaf_containment_pct": 27.07,
+          "reasons": [
+            "POOR_LEAF_CONTAINMENT (27.1% < 58%)"
+          ]
+        },
+        {
+          "candidate_id": "RAW_08",
+          "bbox": [
+            211,
+            0,
+            380,
+            71
+          ],
+          "confidence": 0.06199999898672104,
+          "raw_pixels": 8976,
+          "in_leaf_pixels": 0,
+          "leaf_containment_pct": 0.0,
+          "reasons": [
+            "POOR_LEAF_CONTAINMENT (0.0% < 58%)",
+            "BELOW_MIN_LESION_SIZE (0 px < 50 px)"
+          ]
+        },
+        {
+          "candidate_id": "RAW_09",
+          "bbox": [
+            2,
+            199,
+            197,
+            288
+          ],
+          "confidence": 0.06019999831914902,
+          "raw_pixels": 13267,
+          "in_leaf_pixels": 0,
+          "leaf_containment_pct": 0.0,
+          "reasons": [
+            "POOR_LEAF_CONTAINMENT (0.0% < 58%)",
+            "BELOW_MIN_LESION_SIZE (0 px < 50 px)"
+          ]
+        },
+        {
+          "candidate_id": "RAW_10",
+          "bbox": [
+            290,
+            78,
+            384,
+            268
+          ],
+          "confidence": 0.05420000106096268,
+          "raw_pixels": 11130,
+          "in_leaf_pixels": 2846,
+          "leaf_containment_pct": 25.57,
+          "reasons": [
+            "POOR_LEAF_CONTAINMENT (25.6% < 58%)"
+          ]
+        },
+        {
+          "candidate_id": "RAW_11",
+          "bbox": [
+            0,
+            142,
+            44,
+            284
+          ],
+          "confidence": 0.05180000141263008,
+          "raw_pixels": 2118,
+          "in_leaf_pixels": 0,
+          "leaf_containment_pct": 0.0,
+          "reasons": [
+            "POOR_LEAF_CONTAINMENT (0.0% < 58%)",
+            "BELOW_MIN_LESION_SIZE (0 px < 50 px)"
+          ]
+        },
+        {
+          "candidate_id": "RAW_12",
+          "bbox": [
+            174,
+            136,
+            258,
+            287
+          ],
+          "confidence": 0.05079999938607216,
+          "raw_pixels": 4677,
+          "in_leaf_pixels": 462,
+          "leaf_containment_pct": 9.88,
+          "reasons": [
+            "POOR_LEAF_CONTAINMENT (9.9% < 58%)"
+          ]
+        }
+      ]
+    },
+    "rejected_candidates": [
+      {
+        "candidate_id": "RAW_01",
+        "bbox": [
+          180,
+          208,
+          251,
+          287
+        ],
+        "confidence": 0.21279999613761902,
+        "raw_pixels": 3268,
+        "in_leaf_pixels": 85,
+        "leaf_containment_pct": 2.6,
+        "reasons": [
+          "POOR_LEAF_CONTAINMENT (2.6% < 58%)"
+        ]
+      },
+      {
+        "candidate_id": "RAW_02",
+        "bbox": [
+          4,
+          2,
+          343,
+          286
+        ],
+        "confidence": 0.13910000026226044,
+        "raw_pixels": 88073,
+        "in_leaf_pixels": 15632,
+        "leaf_containment_pct": 17.75,
+        "reasons": [
+          "EXCEEDS_FRAME_RATIO (87.1% > 35%)",
+          "POOR_LEAF_CONTAINMENT (17.7% < 58%)"
+        ]
+      },
+      {
+        "candidate_id": "RAW_03",
+        "bbox": [
+          218,
+          0,
+          383,
+          176
+        ],
+        "confidence": 0.11779999732971191,
+        "raw_pixels": 19878,
+        "in_leaf_pixels": 1908,
+        "leaf_containment_pct": 9.6,
+        "reasons": [
+          "POOR_LEAF_CONTAINMENT (9.6% < 58%)"
+        ]
+      },
+      {
+        "candidate_id": "RAW_04",
+        "bbox": [
+          83,
+          207,
+          251,
+          288
+        ],
+        "confidence": 0.10809999704360962,
+        "raw_pixels": 3963,
+        "in_leaf_pixels": 78,
+        "leaf_containment_pct": 1.97,
+        "reasons": [
+          "POOR_LEAF_CONTAINMENT (2.0% < 58%)"
+        ]
+      },
+      {
+        "candidate_id": "RAW_05",
+        "bbox": [
+          0,
+          142,
+          127,
+          287
+        ],
+        "confidence": 0.07720000296831131,
+        "raw_pixels": 16457,
+        "in_leaf_pixels": 0,
+        "leaf_containment_pct": 0.0,
+        "reasons": [
+          "POOR_LEAF_CONTAINMENT (0.0% < 58%)",
+          "BELOW_MIN_LESION_SIZE (0 px < 50 px)"
+        ]
+      },
+      {
+        "candidate_id": "RAW_07",
+        "bbox": [
+          167,
+          200,
+          381,
+          288
+        ],
+        "confidence": 0.06520000100135803,
+        "raw_pixels": 5762,
+        "in_leaf_pixels": 1560,
+        "leaf_containment_pct": 27.07,
+        "reasons": [
+          "POOR_LEAF_CONTAINMENT (27.1% < 58%)"
+        ]
+      },
+      {
+        "candidate_id": "RAW_08",
+        "bbox": [
+          211,
+          0,
+          380,
+          71
+        ],
+        "confidence": 0.06199999898672104,
+        "raw_pixels": 8976,
+        "in_leaf_pixels": 0,
+        "leaf_containment_pct": 0.0,
+        "reasons": [
+          "POOR_LEAF_CONTAINMENT (0.0% < 58%)",
+          "BELOW_MIN_LESION_SIZE (0 px < 50 px)"
+        ]
+      },
+      {
+        "candidate_id": "RAW_09",
+        "bbox": [
+          2,
+          199,
+          197,
+          288
+        ],
+        "confidence": 0.06019999831914902,
+        "raw_pixels": 13267,
+        "in_leaf_pixels": 0,
+        "leaf_containment_pct": 0.0,
+        "reasons": [
+          "POOR_LEAF_CONTAINMENT (0.0% < 58%)",
+          "BELOW_MIN_LESION_SIZE (0 px < 50 px)"
+        ]
+      },
+      {
+        "candidate_id": "RAW_10",
+        "bbox": [
+          290,
+          78,
+          384,
+          268
+        ],
+        "confidence": 0.05420000106096268,
+        "raw_pixels": 11130,
+        "in_leaf_pixels": 2846,
+        "leaf_containment_pct": 25.57,
+        "reasons": [
+          "POOR_LEAF_CONTAINMENT (25.6% < 58%)"
+        ]
+      },
+      {
+        "candidate_id": "RAW_11",
+        "bbox": [
+          0,
+          142,
+          44,
+          284
+        ],
+        "confidence": 0.05180000141263008,
+        "raw_pixels": 2118,
+        "in_leaf_pixels": 0,
+        "leaf_containment_pct": 0.0,
+        "reasons": [
+          "POOR_LEAF_CONTAINMENT (0.0% < 58%)",
+          "BELOW_MIN_LESION_SIZE (0 px < 50 px)"
+        ]
+      },
+      {
+        "candidate_id": "RAW_12",
+        "bbox": [
+          174,
+          136,
+          258,
+          287
+        ],
+        "confidence": 0.05079999938607216,
+        "raw_pixels": 4677,
+        "in_leaf_pixels": 462,
+        "leaf_containment_pct": 9.88,
+        "reasons": [
+          "POOR_LEAF_CONTAINMENT (9.9% < 58%)"
+        ]
+      }
+    ]
+  },
+  "whatsapp": {
+    "image_id": "whatsapp",
+    "dimensions": [
+      3024,
+      4032
+    ],
+    "total_pixels": 12192768,
+    "failure_classification": "MINE_CANDIDATES_REJECTED",
+    "damage_detected": false,
+    "damage_percentage": 0.0,
+    "regions_count": 0,
+    "leaf_pixels": 6664823,
+    "damage_pixels": 0,
+    "diagnostic_telemetry": {
+      "failure_classification": "MINE_CANDIDATES_REJECTED",
+      "leaf_segmenter": {
+        "method": "heuristic_fallback",
+        "leaf_pixel_count": 6664823,
+        "leaf_area_ratio": 0.5466,
+        "diagnostics": {
+          "logits_min": -0.1052,
+          "logits_max": 0.0272,
+          "logits_mean": -0.0391,
+          "logits_std": 0.0359,
+          "probs_min": 0.4737,
+          "probs_max": 0.5068,
+          "probs_mean": 0.4902,
+          "probs_std": 0.009,
+          "prob_spread": 0.0331,
+          "probs_gt_half_count": 16597,
+          "status": "UNRELIABLE_FALLBACK"
+        }
+      },
+      "mine_segmenter": {
+        "raw_candidates_count": 14,
+        "accepted_candidates_count": 0,
+        "rejected_candidates_count": 14,
+        "operating_confidence_threshold": 0.05
+      },
+      "rejected_candidates": [
+        {
+          "candidate_id": "RAW_01",
+          "bbox": [
+            1200,
+            2377,
+            3018,
+            4024
+          ],
+          "confidence": 0.2628999948501587,
+          "raw_pixels": 2275694,
+          "in_leaf_pixels": 2022970,
+          "leaf_containment_pct": 88.89,
+          "reasons": [
+            "EXCEEDS_MAX_LESION_SIZE (2,022,970 px > 300,000 px)"
+          ]
+        },
+        {
+          "candidate_id": "RAW_02",
+          "bbox": [
+            1292,
+            3301,
+            3007,
+            4027
+          ],
+          "confidence": 0.2578999996185303,
+          "raw_pixels": 1064006,
+          "in_leaf_pixels": 845610,
+          "leaf_containment_pct": 79.47,
+          "reasons": [
+            "EXCEEDS_MAX_LESION_SIZE (845,610 px > 300,000 px)"
+          ]
+        },
+        {
+          "candidate_id": "RAW_03",
+          "bbox": [
+            12,
+            2043,
+            2265,
+            4018
+          ],
+          "confidence": 0.16419999301433563,
+          "raw_pixels": 2541117,
+          "in_leaf_pixels": 496896,
+          "leaf_containment_pct": 19.55,
+          "reasons": [
+            "EXCEEDS_FRAME_RATIO (36.5% > 35%)",
+            "EXCEEDS_MAX_LESION_SIZE (496,896 px > 300,000 px)",
+            "POOR_LEAF_CONTAINMENT (19.6% < 58%)"
+          ]
+        },
+        {
+          "candidate_id": "RAW_04",
+          "bbox": [
+            2339,
+            3250,
+            3020,
+            4028
+          ],
+          "confidence": 0.12219999730587006,
+          "raw_pixels": 288783,
+          "in_leaf_pixels": 163405,
+          "leaf_containment_pct": 56.58,
+          "reasons": [
+            "POOR_LEAF_CONTAINMENT (56.6% < 58%)"
+          ]
+        },
+        {
+          "candidate_id": "RAW_05",
+          "bbox": [
+            21,
+            3292,
+            2548,
+            4030
+          ],
+          "confidence": 0.09950000047683716,
+          "raw_pixels": 1150781,
+          "in_leaf_pixels": 240027,
+          "leaf_containment_pct": 20.86,
+          "reasons": [
+            "POOR_LEAF_CONTAINMENT (20.9% < 58%)"
+          ]
+        },
+        {
+          "candidate_id": "RAW_06",
+          "bbox": [
+            2447,
+            2236,
+            3024,
+            4016
+          ],
+          "confidence": 0.09619999676942825,
+          "raw_pixels": 519464,
+          "in_leaf_pixels": 401278,
+          "leaf_containment_pct": 77.25,
+          "reasons": [
+            "EXCEEDS_MAX_LESION_SIZE (401,278 px > 300,000 px)"
+          ]
+        },
+        {
+          "candidate_id": "RAW_07",
+          "bbox": [
+            162,
+            0,
+            3006,
+            1256
+          ],
+          "confidence": 0.09470000118017197,
+          "raw_pixels": 1291685,
+          "in_leaf_pixels": 513708,
+          "leaf_containment_pct": 39.77,
+          "reasons": [
+            "EXCEEDS_MAX_LESION_SIZE (513,708 px > 300,000 px)",
+            "POOR_LEAF_CONTAINMENT (39.8% < 58%)"
+          ]
+        },
+        {
+          "candidate_id": "RAW_08",
+          "bbox": [
+            688,
+            56,
+            3023,
+            3976
+          ],
+          "confidence": 0.08640000224113464,
+          "raw_pixels": 6653989,
+          "in_leaf_pixels": 6152045,
+          "leaf_containment_pct": 92.46,
+          "reasons": [
+            "EXCEEDS_FRAME_RATIO (75.1% > 35%)",
+            "EXCEEDS_MAX_LESION_SIZE (6,152,045 px > 300,000 px)"
+          ]
+        },
+        {
+          "candidate_id": "RAW_09",
+          "bbox": [
+            0,
+            1965,
+            801,
+            3994
+          ],
+          "confidence": 0.08510000258684158,
+          "raw_pixels": 722064,
+          "in_leaf_pixels": 0,
+          "leaf_containment_pct": 0.0,
+          "reasons": [
+            "POOR_LEAF_CONTAINMENT (0.0% < 58%)",
+            "BELOW_MIN_LESION_SIZE (0 px < 50 px)"
+          ]
+        },
+        {
+          "candidate_id": "RAW_10",
+          "bbox": [
+            1620,
+            183,
+            3022,
+            2478
+          ],
+          "confidence": 0.08100000023841858,
+          "raw_pixels": 1560158,
+          "in_leaf_pixels": 1499965,
+          "leaf_containment_pct": 96.14,
+          "reasons": [
+            "EXCEEDS_MAX_LESION_SIZE (1,499,965 px > 300,000 px)"
+          ]
+        },
+        {
+          "candidate_id": "RAW_11",
+          "bbox": [
+            1454,
+            0,
+            3024,
+            1059
+          ],
+          "confidence": 0.0658000037074089,
+          "raw_pixels": 636690,
+          "in_leaf_pixels": 555052,
+          "leaf_containment_pct": 87.18,
+          "reasons": [
+            "EXCEEDS_MAX_LESION_SIZE (555,052 px > 300,000 px)"
+          ]
+        },
+        {
+          "candidate_id": "RAW_12",
+          "bbox": [
+            2733,
+            29,
+            3024,
+            1951
+          ],
+          "confidence": 0.06310000270605087,
+          "raw_pixels": 107351,
+          "in_leaf_pixels": 39674,
+          "leaf_containment_pct": 36.96,
+          "reasons": [
+            "POOR_LEAF_CONTAINMENT (37.0% < 58%)"
+          ]
+        },
+        {
+          "candidate_id": "RAW_13",
+          "bbox": [
+            0,
+            2009,
+            415,
+            3787
+          ],
+          "confidence": 0.05640000104904175,
+          "raw_pixels": 190629,
+          "in_leaf_pixels": 0,
+          "leaf_containment_pct": 0.0,
+          "reasons": [
+            "POOR_LEAF_CONTAINMENT (0.0% < 58%)",
+            "BELOW_MIN_LESION_SIZE (0 px < 50 px)"
+          ]
+        },
+        {
+          "candidate_id": "RAW_14",
+          "bbox": [
+            0,
+            3081,
+            922,
+            4032
+          ],
+          "confidence": 0.05249999836087227,
+          "raw_pixels": 784845,
+          "in_leaf_pixels": 0,
+          "leaf_containment_pct": 0.0,
+          "reasons": [
+            "POOR_LEAF_CONTAINMENT (0.0% < 58%)",
+            "BELOW_MIN_LESION_SIZE (0 px < 50 px)"
+          ]
+        }
+      ]
+    },
+    "rejected_candidates": [
+      {
+        "candidate_id": "RAW_01",
+        "bbox": [
+          1200,
+          2377,
+          3018,
+          4024
+        ],
+        "confidence": 0.2628999948501587,
+        "raw_pixels": 2275694,
+        "in_leaf_pixels": 2022970,
+        "leaf_containment_pct": 88.89,
+        "reasons": [
+          "EXCEEDS_MAX_LESION_SIZE (2,022,970 px > 300,000 px)"
+        ]
+      },
+      {
+        "candidate_id": "RAW_02",
+        "bbox": [
+          1292,
+          3301,
+          3007,
+          4027
+        ],
+        "confidence": 0.2578999996185303,
+        "raw_pixels": 1064006,
+        "in_leaf_pixels": 845610,
+        "leaf_containment_pct": 79.47,
+        "reasons": [
+          "EXCEEDS_MAX_LESION_SIZE (845,610 px > 300,000 px)"
+        ]
+      },
+      {
+        "candidate_id": "RAW_03",
+        "bbox": [
+          12,
+          2043,
+          2265,
+          4018
+        ],
+        "confidence": 0.16419999301433563,
+        "raw_pixels": 2541117,
+        "in_leaf_pixels": 496896,
+        "leaf_containment_pct": 19.55,
+        "reasons": [
+          "EXCEEDS_FRAME_RATIO (36.5% > 35%)",
+          "EXCEEDS_MAX_LESION_SIZE (496,896 px > 300,000 px)",
+          "POOR_LEAF_CONTAINMENT (19.6% < 58%)"
+        ]
+      },
+      {
+        "candidate_id": "RAW_04",
+        "bbox": [
+          2339,
+          3250,
+          3020,
+          4028
+        ],
+        "confidence": 0.12219999730587006,
+        "raw_pixels": 288783,
+        "in_leaf_pixels": 163405,
+        "leaf_containment_pct": 56.58,
+        "reasons": [
+          "POOR_LEAF_CONTAINMENT (56.6% < 58%)"
+        ]
+      },
+      {
+        "candidate_id": "RAW_05",
+        "bbox": [
+          21,
+          3292,
+          2548,
+          4030
+        ],
+        "confidence": 0.09950000047683716,
+        "raw_pixels": 1150781,
+        "in_leaf_pixels": 240027,
+        "leaf_containment_pct": 20.86,
+        "reasons": [
+          "POOR_LEAF_CONTAINMENT (20.9% < 58%)"
+        ]
+      },
+      {
+        "candidate_id": "RAW_06",
+        "bbox": [
+          2447,
+          2236,
+          3024,
+          4016
+        ],
+        "confidence": 0.09619999676942825,
+        "raw_pixels": 519464,
+        "in_leaf_pixels": 401278,
+        "leaf_containment_pct": 77.25,
+        "reasons": [
+          "EXCEEDS_MAX_LESION_SIZE (401,278 px > 300,000 px)"
+        ]
+      },
+      {
+        "candidate_id": "RAW_07",
+        "bbox": [
+          162,
+          0,
+          3006,
+          1256
+        ],
+        "confidence": 0.09470000118017197,
+        "raw_pixels": 1291685,
+        "in_leaf_pixels": 513708,
+        "leaf_containment_pct": 39.77,
+        "reasons": [
+          "EXCEEDS_MAX_LESION_SIZE (513,708 px > 300,000 px)",
+          "POOR_LEAF_CONTAINMENT (39.8% < 58%)"
+        ]
+      },
+      {
+        "candidate_id": "RAW_08",
+        "bbox": [
+          688,
+          56,
+          3023,
+          3976
+        ],
+        "confidence": 0.08640000224113464,
+        "raw_pixels": 6653989,
+        "in_leaf_pixels": 6152045,
+        "leaf_containment_pct": 92.46,
+        "reasons": [
+          "EXCEEDS_FRAME_RATIO (75.1% > 35%)",
+          "EXCEEDS_MAX_LESION_SIZE (6,152,045 px > 300,000 px)"
+        ]
+      },
+      {
+        "candidate_id": "RAW_09",
+        "bbox": [
+          0,
+          1965,
+          801,
+          3994
+        ],
+        "confidence": 0.08510000258684158,
+        "raw_pixels": 722064,
+        "in_leaf_pixels": 0,
+        "leaf_containment_pct": 0.0,
+        "reasons": [
+          "POOR_LEAF_CONTAINMENT (0.0% < 58%)",
+          "BELOW_MIN_LESION_SIZE (0 px < 50 px)"
+        ]
+      },
+      {
+        "candidate_id": "RAW_10",
+        "bbox": [
+          1620,
+          183,
+          3022,
+          2478
+        ],
+        "confidence": 0.08100000023841858,
+        "raw_pixels": 1560158,
+        "in_leaf_pixels": 1499965,
+        "leaf_containment_pct": 96.14,
+        "reasons": [
+          "EXCEEDS_MAX_LESION_SIZE (1,499,965 px > 300,000 px)"
+        ]
+      },
+      {
+        "candidate_id": "RAW_11",
+        "bbox": [
+          1454,
+          0,
+          3024,
+          1059
+        ],
+        "confidence": 0.0658000037074089,
+        "raw_pixels": 636690,
+        "in_leaf_pixels": 555052,
+        "leaf_containment_pct": 87.18,
+        "reasons": [
+          "EXCEEDS_MAX_LESION_SIZE (555,052 px > 300,000 px)"
+        ]
+      },
+      {
+        "candidate_id": "RAW_12",
+        "bbox": [
+          2733,
+          29,
+          3024,
+          1951
+        ],
+        "confidence": 0.06310000270605087,
+        "raw_pixels": 107351,
+        "in_leaf_pixels": 39674,
+        "leaf_containment_pct": 36.96,
+        "reasons": [
+          "POOR_LEAF_CONTAINMENT (37.0% < 58%)"
+        ]
+      },
+      {
+        "candidate_id": "RAW_13",
+        "bbox": [
+          0,
+          2009,
+          415,
+          3787
+        ],
+        "confidence": 0.05640000104904175,
+        "raw_pixels": 190629,
+        "in_leaf_pixels": 0,
+        "leaf_containment_pct": 0.0,
+        "reasons": [
+          "POOR_LEAF_CONTAINMENT (0.0% < 58%)",
+          "BELOW_MIN_LESION_SIZE (0 px < 50 px)"
+        ]
+      },
+      {
+        "candidate_id": "RAW_14",
+        "bbox": [
+          0,
+          3081,
+          922,
+          4032
+        ],
+        "confidence": 0.05249999836087227,
+        "raw_pixels": 784845,
+        "in_leaf_pixels": 0,
+        "leaf_containment_pct": 0.0,
+        "reasons": [
+          "POOR_LEAF_CONTAINMENT (0.0% < 58%)",
+          "BELOW_MIN_LESION_SIZE (0 px < 50 px)"
+        ]
+      }
+    ]
+  }
+}

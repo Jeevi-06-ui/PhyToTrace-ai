@@ -1,0 +1,96 @@
+image_id,original_filename,plant_id,farm_id,visible_damage_type,leaf_mask_status,mine_annotation_status,annotation_reviewer,num_damage_regions,image_quality,ready_for_training,is_verified_negative,leaf_mask_path,mine_mask_path,notes
+IMG_0001,5558326.jpg,PL_ARCH_5558326,ARCHIVE_REF,leaf_miner_damage,completed,completed,human_annotator_01,8,sharp,True,False,data/segmentation/masks/leaf/IMG_0001_leaf_mask.png,data/segmentation/masks/mine/IMG_0001_mine_mask.png,Leaf polygons: 1 | Mine polygons: 8
+IMG_0002,5558327.jpg,PL_ARCH_5558327,ARCHIVE_REF,leaf_miner_damage,completed,completed,human_annotator_01,1,sharp,True,False,data/segmentation/masks/leaf/IMG_0002_leaf_mask.png,data/segmentation/masks/mine/IMG_0002_mine_mask.png,Leaf polygons: 1 | Mine polygons: 1
+IMG_0003,5595347.jpg,PL_ARCH_5595347,ARCHIVE_REF,other_damage,completed,completed,human_annotator_01,5,sharp,True,False,data/segmentation/masks/leaf/IMG_0003_leaf_mask.png,data/segmentation/masks/mine/IMG_0003_mine_mask.png,Leaf polygons: 1 | Mine polygons: 5 | Check: 5 mine polygons on other_damage leaf
+IMG_0004,5595348.jpg,PL_ARCH_5595348,ARCHIVE_REF,other_damage,completed,completed,human_annotator_01,2,sharp,True,False,data/segmentation/masks/leaf/IMG_0004_leaf_mask.png,data/segmentation/masks/mine/IMG_0004_mine_mask.png,Leaf polygons: 2 | Mine polygons: 2 | Check: 2 mine polygons on other_damage leaf
+IMG_0005,5595349.jpg,PL_ARCH_5595349,ARCHIVE_REF,other_damage,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0006,5595350.jpg,PL_ARCH_5595350,ARCHIVE_REF,leaf_miner_damage,completed,completed,human_annotator_01,1,sharp,True,False,data/segmentation/masks/leaf/IMG_0006_leaf_mask.png,data/segmentation/masks/mine/IMG_0006_mine_mask.png,Leaf polygons: 1 | Mine polygons: 1
+IMG_0007,5595351.jpg,PL_ARCH_5595351,ARCHIVE_REF,leaf_miner_damage,completed,completed,human_annotator_01,1,sharp,True,False,data/segmentation/masks/leaf/IMG_0007_leaf_mask.png,data/segmentation/masks/mine/IMG_0007_mine_mask.png,Leaf polygons: 1 | Mine polygons: 1
+IMG_0008,5595360.jpg,PL_ARCH_5595360,ARCHIVE_REF,leaf_miner_damage,completed,completed,human_annotator_01,21,sharp,True,False,data/segmentation/masks/leaf/IMG_0008_leaf_mask.png,data/segmentation/masks/mine/IMG_0008_mine_mask.png,Leaf polygons: 1 | Mine polygons: 21
+IMG_0009,BLK_3_1002_PL009_NH.JPG,PL009,BLOCK_3,leaf_miner_damage,completed,completed,human_annotator_01,10,sharp,True,False,data/segmentation/masks/leaf/IMG_0009_leaf_mask.png,data/segmentation/masks/mine/IMG_0009_mine_mask.png,Leaf polygons: 1 | Mine polygons: 10
+IMG_0010,BLK_3_1002_PL010_H.JPG,PL010,BLOCK_3,healthy,completed,flagged,human_annotator_01,31,sharp,False,False,data/segmentation/masks/leaf/IMG_0010_leaf_mask.png,data/segmentation/masks/mine/IMG_0010_mine_mask.png,Leaf polygons: 1 | Mine polygons: 31 | CONFLICT: Healthy leaf has 31 mine polygons! Delete mines in CVAT to verify negative.
+IMG_0011,BLK_3_1002_PL014_NH.JPG,PL014,BLOCK_3,leaf_miner_damage,completed,completed,human_annotator_01,23,sharp,True,False,data/segmentation/masks/leaf/IMG_0011_leaf_mask.png,data/segmentation/masks/mine/IMG_0011_mine_mask.png,Leaf polygons: 1 | Mine polygons: 23
+IMG_0012,BLK_3_1002_PL015_NH.JPG,PL015,BLOCK_3,leaf_miner_damage,completed,flagged,human_annotator_01,25,sharp,False,False,data/segmentation/masks/leaf/IMG_0012_leaf_mask.png,data/segmentation/masks/mine/IMG_0012_mine_mask.png,Leaf polygons: 1 | Mine polygons: 25 | WARN: 7.3% mine outside leaf
+IMG_0013,BLK_3_1002_PL016_NH.JPG,PL016,BLOCK_3,leaf_miner_damage,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0014,BLK_3_1002_PL019_NH.JPG,PL019,BLOCK_3,leaf_miner_damage,completed,completed,human_annotator_01,15,sharp,True,False,data/segmentation/masks/leaf/IMG_0014_leaf_mask.png,data/segmentation/masks/mine/IMG_0014_mine_mask.png,Leaf polygons: 1 | Mine polygons: 15
+IMG_0015,BLK_3_1002_PL021_H.JPG,PL021,BLOCK_3,healthy,completed,flagged,human_annotator_01,29,sharp,False,False,data/segmentation/masks/leaf/IMG_0015_leaf_mask.png,data/segmentation/masks/mine/IMG_0015_mine_mask.png,Leaf polygons: 1 | Mine polygons: 29 | CONFLICT: Healthy leaf has 29 mine polygons! Delete mines in CVAT to verify negative.
+IMG_0016,BLK_3_1002_PL022_NH.JPG,PL022,BLOCK_3,other_damage,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0017,BLK_3_1002_PL024_NH.JPG,PL024,BLOCK_3,leaf_miner_damage,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0018,BLK_3_1002_PL025_H.JPG,PL025,BLOCK_3,healthy,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0019,BLK_3_1002_PL026_NH.JPG,PL026,BLOCK_3,leaf_miner_damage,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0020,BLK_3_1002_PL027_H.JPG,PL027,BLOCK_3,healthy,completed,flagged,human_annotator_01,17,sharp,False,False,data/segmentation/masks/leaf/IMG_0020_leaf_mask.png,data/segmentation/masks/mine/IMG_0020_mine_mask.png,Leaf polygons: 1 | Mine polygons: 17 | CONFLICT: Healthy leaf has 17 mine polygons! Delete mines in CVAT to verify negative.
+IMG_0021,BLK_3_1002_PL028_H.JPG,PL028,BLOCK_3,healthy,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0022,BLK_3_1002_PL029_H.JPG,PL029,BLOCK_3,healthy,completed,flagged,human_annotator_01,18,sharp,False,False,data/segmentation/masks/leaf/IMG_0022_leaf_mask.png,data/segmentation/masks/mine/IMG_0022_mine_mask.png,Leaf polygons: 1 | Mine polygons: 18 | CONFLICT: Healthy leaf has 18 mine polygons! Delete mines in CVAT to verify negative.
+IMG_0023,BLK_3_1002_PL030_H.JPG,PL030,BLOCK_3,healthy,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0024,BLK_3_1002_PL031_H.JPG,PL031,BLOCK_3,healthy,completed,flagged,human_annotator_01,8,sharp,False,False,data/segmentation/masks/leaf/IMG_0024_leaf_mask.png,data/segmentation/masks/mine/IMG_0024_mine_mask.png,Leaf polygons: 1 | Mine polygons: 8 | CONFLICT: Healthy leaf has 8 mine polygons! Delete mines in CVAT to verify negative.
+IMG_0025,BLK_3_1002_PL032_NH.JPG,PL032,BLOCK_3,other_damage,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0026,BLK_3_1002_PL033_NH.JPG,PL033,BLOCK_3,leaf_miner_damage,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0027,BLK_3_1002_PL034_H.JPG,PL034,BLOCK_3,healthy,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0028,BLK_3_1002_PL035_NH.JPG,PL035,BLOCK_3,leaf_miner_damage,completed,completed,human_annotator_01,6,sharp,True,False,data/segmentation/masks/leaf/IMG_0028_leaf_mask.png,data/segmentation/masks/mine/IMG_0028_mine_mask.png,Leaf polygons: 1 | Mine polygons: 6
+IMG_0029,BLK_3_1002_PL036_H.JPG,PL036,BLOCK_3,healthy,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0030,BLK_3_1002_PL037_H.JPG,PL037,BLOCK_3,healthy,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0031,BLK_3_1002_PL038_NH.JPG,PL038,BLOCK_3,leaf_miner_damage,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0032,BLK_3_1002_PL039_H.JPG,PL039,BLOCK_3,healthy,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0033,BLK_3_1002_PL040_H.JPG,PL040,BLOCK_3,healthy,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0034,BLK_3_1002_PL041_NH.JPG,PL041,BLOCK_3,leaf_miner_damage,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0035,BLK_3_1002_PL042_H.JPG,PL042,BLOCK_3,healthy,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0036,BLK_3_1002_PL043_H.JPG,PL043,BLOCK_3,healthy,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0037,BLK_3_1002_PL044_H.JPG,PL044,BLOCK_3,healthy,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0038,BLK_3_1002_PL045_NH.JPG,PL045,BLOCK_3,leaf_miner_damage,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0039,BLK_3_1002_PL046_NH.JPG,PL046,BLOCK_3,leaf_miner_damage,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0040,BLK_3_1002_PL047_NH.JPG,PL047,BLOCK_3,leaf_miner_damage,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0041,BLK_3_1002_PL048_NH.JPG,PL048,BLOCK_3,leaf_miner_damage,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0042,BLK_3_1002_PL049_NH.JPG,PL049,BLOCK_3,other_damage,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0043,BLK_3_1002_PL050_NH.JPG,PL050,BLOCK_3,leaf_miner_damage,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0044,BLK_3_1002_PL051_NH.JPG,PL051,BLOCK_3,leaf_miner_damage,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0045,BLK_3_1002_PL052_H.JPG,PL052,BLOCK_3,healthy,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0046,BLK_3_1002_PL053_NH.JPG,PL053,BLOCK_3,leaf_miner_damage,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0047,BLK_3_1002_PL054_NH.JPG,PL054,BLOCK_3,leaf_miner_damage,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0048,BLK_3_1002_PL055_NH.JPG,PL055,BLOCK_3,leaf_miner_damage,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0049,BLK_3_1002_PL056_H.JPG,PL056,BLOCK_3,healthy,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0050,BLK_3_1002_PL057_H.JPG,PL057,BLOCK_3,healthy,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0051,BLK_3_1002_PL058_NH.JPG,PL058,BLOCK_3,leaf_miner_damage,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0052,BLK_3_1002_PL059_H.JPG,PL059,BLOCK_3,healthy,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0053,BLK_3_1002_PL060_H.JPG,PL060,BLOCK_3,healthy,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0054,BLK_3_1002_PL061_NH.JPG,PL061,BLOCK_3,leaf_miner_damage,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0055,BLK_3_1002_PL062_NH.JPG,PL062,BLOCK_3,leaf_miner_damage,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0056,BLK_3_1002_PL063_NH.JPG,PL063,BLOCK_3,leaf_miner_damage,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0057,BLK_3_1002_PL064_H.JPG,PL064,BLOCK_3,healthy,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0058,BLK_3_1002_PL065_NH.JPG,PL065,BLOCK_3,leaf_miner_damage,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0059,BLK_3_1002_PL066_NH.JPG,PL066,BLOCK_3,leaf_miner_damage,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0060,BLK_3_1002_PL067_H.JPG,PL067,BLOCK_3,healthy,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0061,BLK_3_1002_PL068_NH.JPG,PL068,BLOCK_3,leaf_miner_damage,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0062,BLK_3_1002_PL069_H.JPG,PL069,BLOCK_3,healthy,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0063,BLK_3_1002_PL070_NH.JPG,PL070,BLOCK_3,leaf_miner_damage,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0064,BLK_3_1002_PL071_H.JPG,PL071,BLOCK_3,healthy,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0065,BLK_3_1002_PL072_H.JPG,PL072,BLOCK_3,healthy,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0066,BLK_3_1002_PL073_H.JPG,PL073,BLOCK_3,healthy,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0067,BLK_3_1002_PL074_NH.JPG,PL074,BLOCK_3,leaf_miner_damage,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0068,BLK_3_1002_PL075_NH.JPG,PL075,BLOCK_3,leaf_miner_damage,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0069,BLK_3_1002_PL076_NH.JPG,PL076,BLOCK_3,leaf_miner_damage,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0070,BLK_3_1002_PL077_NH.JPG,PL077,BLOCK_3,leaf_miner_damage,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0071,BLK_3_1002_PL078_H.JPG,PL078,BLOCK_3,healthy,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0072,BLK_3_1002_PL079_NH.JPG,PL079,BLOCK_3,leaf_miner_damage,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0073,BLK_3_1002_PL080_NH.JPG,PL080,BLOCK_3,leaf_miner_damage,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0074,BLK_3_1002_PL081_H.JPG,PL081,BLOCK_3,healthy,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0075,BLK_3_1002_PL082_H.JPG,PL082,BLOCK_3,healthy,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0076,BLK_3_1002_PL083_H.JPG,PL083,BLOCK_3,healthy,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0077,BLK_3_1002_PL084_NH.JPG,PL084,BLOCK_3,leaf_miner_damage,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0078,BLK_3_1002_PL085_NH.JPG,PL085,BLOCK_3,leaf_miner_damage,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0079,BLK_3_1002_PL086_NH.JPG,PL086,BLOCK_3,leaf_miner_damage,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0080,BLK_3_1002_PL087_NH.JPG,PL087,BLOCK_3,leaf_miner_damage,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0081,BLK_3_1002_PL088_H.JPG,PL088,BLOCK_3,healthy,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0082,BLK_3_1002_PL089_NH.JPG,PL089,BLOCK_3,leaf_miner_damage,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0083,BLK_3_1002_PL090_NH.JPG,PL090,BLOCK_3,leaf_miner_damage,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0084,BLK_3_1002_PL091_NH.JPG,PL091,BLOCK_3,leaf_miner_damage,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0085,BLK_3_1002_PL092_H.JPG,PL092,BLOCK_3,healthy,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0086,BLK_3_1002_PL093_H.JPG,PL093,BLOCK_3,healthy,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0087,BLK_3_1002_PL094_NH.JPG,PL094,BLOCK_3,leaf_miner_damage,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0088,BLK_3_1002_PL095_H.JPG,PL095,BLOCK_3,healthy,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0089,BLK_3_1002_PL096_NH.JPG,PL096,BLOCK_3,leaf_miner_damage,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0090,IMG_1588.JPG,PL_FIELD_IMG_1588,FARM_CANON_01,other_damage,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0091,IMG_1594.JPG,PL_FIELD_IMG_1594,FARM_CANON_01,healthy,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0092,IMG_1874.JPG,PL_FIELD_IMG_1874,FARM_CANON_01,other_damage,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0093,IMG_1882.JPG,PL_FIELD_IMG_1882,FARM_CANON_01,other_damage,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0094,IMG_1884.JPG,PL_FIELD_IMG_1884,FARM_CANON_01,healthy,unannotated,unannotated,none,0,sharp,False,False,,,Awaiting CVAT polygon annotation.
+IMG_0095,IMG_2162.JPG,PL_FIELD_IMG_2162,FARM_CANON_01,other_damage,completed,flagged,human_annotator_01,10,sharp,False,False,data/segmentation/masks/leaf/IMG_0095_leaf_mask.png,data/segmentation/masks/mine/IMG_0095_mine_mask.png,Leaf polygons: 1 | Mine polygons: 10 | WARN: 6.2% mine outside leaf | Check: 10 mine polygons on other_damage leaf

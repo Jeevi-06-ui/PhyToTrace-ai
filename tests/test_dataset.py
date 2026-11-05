@@ -100,11 +100,17 @@ def test_classification_dataset_label_mapping():
 
 def test_segmentation_dataset_loading(sample_image_dir):
     imgs = list(sample_image_dir.glob("*.jpg"))
-    ds = TomatoLeafSegmentationDataset(image_paths=imgs, target_size=(256, 256))
+    mask_data = np.zeros((256, 256), dtype=np.uint8)
+    mask_data[32:224, 32:224] = 1
+    masks = [image.with_suffix(".png") for image in imgs]
+    for path in masks:
+        Image.fromarray(mask_data).save(path)
+    ds = TomatoLeafSegmentationDataset(image_paths=imgs, mask_paths=masks, target_size=(256, 256))
     assert len(ds) == 5
     x, mask = ds[0]
     assert x.shape == (3, 256, 256)
     assert mask.shape == (1, 256, 256)
+    assert set(mask.unique().tolist()) == {0.0, 1.0}
 
 
 def test_evidence_dataset_unverified_masking(tmp_path, sample_image_dir):

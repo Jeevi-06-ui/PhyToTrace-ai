@@ -1,0 +1,26 @@
+{
+  "timestamp": "2026-11-03T13:56:10.926701",
+  "total_images": 95,
+  "total_size_mb": 22.83,
+  "file_formats": {
+    ".jpg": 95
+  },
+  "unique_resolutions_count": 89,
+  "top_resolutions": {
+    "384x288": 7,
+    "288x384": 1,
+    "690x953": 1,
+    "1587x1286": 1,
+    "1211x1246": 1
+  },
+  "exact_duplicate_clusters": 0,
+  "near_duplicate_clusters": 0,
+  "independent_plants_count": 95,
+  "independent_farms_count": 3,
+  "current_label_distribution": {
+    "unlabelled": 60,
+    "healthy": 35
+  },
+  "metadata_csv_path": "/Users/jeevithp/Desktop/PhyToTrace/data/metadata/metadata.csv",
+  "inventory_csv_path": "/Users/jeevithp/Desktop/PhyToTrace/reports/dataset_inventory.csv"
+}

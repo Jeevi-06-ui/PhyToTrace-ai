@@ -30,12 +30,16 @@ class ImageQuality(str, Enum):
 
 
 class VisibleDamageType(str, Enum):
+    UNLABELLED = "unlabelled"
+    HEALTHY = "healthy"
     NONE = "none"
+    LEAF_MINER_DAMAGE = "leaf_miner_damage"
     LEAF_MINER_MINE = "leaf_miner_mine"
     CHEWING = "chewing"
     BLIGHT = "blight"
     PUNCTURES = "punctures"
     CURLING = "curling"
+    OTHER_DAMAGE = "other_damage"
     OTHER = "other"
 
 
