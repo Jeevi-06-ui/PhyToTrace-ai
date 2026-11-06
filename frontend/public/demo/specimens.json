@@ -1,0 +1,269 @@
+[
+  {
+    "id": "specimen_canopy_mixed",
+    "title": "Greenhouse Canopy Specimen (Mixed Infestation)",
+    "subtitle": "Active co-infestation of Tuta absoluta & Liriomyza trifolii",
+    "badge": "Field Specimen #5595360",
+    "tag": "Mixed Infestation (Tuta & Liriomyza)",
+    "width": 384,
+    "height": 288,
+    "raw_url": "/demo/specimen_canopy_mixed_raw.jpg",
+    "annotated_url": "/demo/specimen_canopy_mixed_annotated.jpg",
+    "leaf_mask_url": "/demo/specimen_canopy_mixed_leaf.png",
+    "mine_mask_url": "/demo/specimen_canopy_mixed_mine.png",
+    "damage_detected": true,
+    "damage_percentage": 37.53,
+    "diagnosis_name": "Mixed Infestation (Tuta & Liriomyza)",
+    "diagnosis_accuracy": 80.4,
+    "leaf_area_pixels": 64119,
+    "damage_area_pixels": 24063,
+    "regions_count": 4,
+    "regions": [
+      {
+        "region_id": "R_01",
+        "bbox": [
+          56,
+          1,
+          185,
+          107
+        ],
+        "x_pct": 31.38,
+        "y_pct": 18.75,
+        "confidence": 28.7,
+        "pest_evidence": "tuta",
+        "damage_type": "blotch_mine",
+        "area_pixels": 10339,
+        "is_necrotic_spot": false,
+        "tuta_score": 71.5,
+        "liriomyza_score": 41.4
+      },
+      {
+        "region_id": "R_02",
+        "bbox": [
+          1,
+          5,
+          138,
+          225
+        ],
+        "x_pct": 18.1,
+        "y_pct": 39.93,
+        "confidence": 24.6,
+        "pest_evidence": "tuta",
+        "damage_type": "blotch_mine",
+        "area_pixels": 11902,
+        "is_necrotic_spot": false,
+        "tuta_score": 69.9,
+        "liriomyza_score": 58.7
+      },
+      {
+        "region_id": "R_03",
+        "bbox": [
+          184,
+          21,
+          290,
+          120
+        ],
+        "x_pct": 61.72,
+        "y_pct": 24.48,
+        "confidence": 18.5,
+        "pest_evidence": "tuta",
+        "damage_type": "blotch_mine",
+        "area_pixels": 6128,
+        "is_necrotic_spot": false,
+        "tuta_score": 67.4,
+        "liriomyza_score": 66.1
+      },
+      {
+        "region_id": "R_04",
+        "bbox": [
+          1,
+          1,
+          105,
+          118
+        ],
+        "x_pct": 13.8,
+        "y_pct": 20.66,
+        "confidence": 17.0,
+        "pest_evidence": "liriomyza",
+        "damage_type": "serpentine_mine",
+        "area_pixels": 4476,
+        "is_necrotic_spot": false,
+        "tuta_score": 52.9,
+        "liriomyza_score": 66.8
+      }
+    ]
+  },
+  {
+    "id": "specimen_leaflet_serpentine",
+    "title": "Macro Leaflet Specimen (Dr. R.J. Jacobson)",
+    "subtitle": "Classic winding serpentine leaf-miner mines across central leaflet",
+    "badge": "Controlled Macro Specimen",
+    "tag": "Serpentine Leaf Miner",
+    "width": 1280,
+    "height": 960,
+    "raw_url": "/demo/specimen_leaflet_serpentine_raw.jpg",
+    "annotated_url": "/demo/specimen_leaflet_serpentine_annotated.jpg",
+    "leaf_mask_url": "/demo/specimen_leaflet_serpentine_leaf.png",
+    "mine_mask_url": "/demo/specimen_leaflet_serpentine_mine.png",
+    "damage_detected": true,
+    "damage_percentage": 26.0,
+    "diagnosis_name": "Mixed Infestation (Tuta & Liriomyza)",
+    "diagnosis_accuracy": 79.5,
+    "leaf_area_pixels": 426174,
+    "damage_area_pixels": 110790,
+    "regions_count": 1,
+    "regions": [
+      {
+        "region_id": "R_01",
+        "bbox": [
+          131,
+          162,
+          614,
+          641
+        ],
+        "x_pct": 29.1,
+        "y_pct": 41.82,
+        "confidence": 12.3,
+        "pest_evidence": "liriomyza",
+        "damage_type": "serpentine_mine",
+        "area_pixels": 110790,
+        "is_necrotic_spot": false,
+        "tuta_score": 54.6,
+        "liriomyza_score": 64.9
+      }
+    ]
+  },
+  {
+    "id": "specimen_field_multitract",
+    "title": "Compound Foliage Specimen (Multi-Tract)",
+    "subtitle": "Five localized damage clusters across upper and lower tiers",
+    "badge": "Field Specimen #5595348",
+    "tag": "High Severity (30.7%)",
+    "width": 384,
+    "height": 288,
+    "raw_url": "/demo/specimen_field_multitract_raw.jpg",
+    "annotated_url": "/demo/specimen_field_multitract_annotated.jpg",
+    "leaf_mask_url": "/demo/specimen_field_multitract_leaf.png",
+    "mine_mask_url": "/demo/specimen_field_multitract_mine.png",
+    "damage_detected": true,
+    "damage_percentage": 30.71,
+    "diagnosis_name": "Mixed Infestation (Tuta & Liriomyza)",
+    "diagnosis_accuracy": 79.9,
+    "leaf_area_pixels": 63510,
+    "damage_area_pixels": 19504,
+    "regions_count": 5,
+    "regions": [
+      {
+        "region_id": "R_01",
+        "bbox": [
+          46,
+          7,
+          206,
+          101
+        ],
+        "x_pct": 32.81,
+        "y_pct": 18.75,
+        "confidence": 13.4,
+        "pest_evidence": "tuta",
+        "damage_type": "blotch_mine",
+        "area_pixels": 4163,
+        "is_necrotic_spot": false,
+        "tuta_score": 65.4,
+        "liriomyza_score": 65.3
+      },
+      {
+        "region_id": "R_02",
+        "bbox": [
+          0,
+          39,
+          125,
+          159
+        ],
+        "x_pct": 16.28,
+        "y_pct": 34.38,
+        "confidence": 12.3,
+        "pest_evidence": "tuta",
+        "damage_type": "blotch_mine",
+        "area_pixels": 2160,
+        "is_necrotic_spot": false,
+        "tuta_score": 64.9,
+        "liriomyza_score": 62.9
+      },
+      {
+        "region_id": "R_03",
+        "bbox": [
+          279,
+          52,
+          383,
+          255
+        ],
+        "x_pct": 86.2,
+        "y_pct": 53.3,
+        "confidence": 11.2,
+        "pest_evidence": "tuta",
+        "damage_type": "blotch_mine",
+        "area_pixels": 5731,
+        "is_necrotic_spot": false,
+        "tuta_score": 64.5,
+        "liriomyza_score": 48.7
+      },
+      {
+        "region_id": "R_04",
+        "bbox": [
+          196,
+          174,
+          228,
+          193
+        ],
+        "x_pct": 55.21,
+        "y_pct": 63.72,
+        "confidence": 90.0,
+        "pest_evidence": "tuta",
+        "damage_type": "blotch_mine",
+        "area_pixels": 187,
+        "is_necrotic_spot": true,
+        "tuta_score": 90.0,
+        "liriomyza_score": 10.0
+      },
+      {
+        "region_id": "R_05",
+        "bbox": [
+          115,
+          157,
+          123,
+          170
+        ],
+        "x_pct": 30.99,
+        "y_pct": 56.77,
+        "confidence": 90.0,
+        "pest_evidence": "tuta",
+        "damage_type": "blotch_mine",
+        "area_pixels": 46,
+        "is_necrotic_spot": true,
+        "tuta_score": 90.0,
+        "liriomyza_score": 10.0
+      }
+    ]
+  },
+  {
+    "id": "specimen_healthy_control",
+    "title": "Healthy Tomato Canopy (Verified Control)",
+    "subtitle": "Clean vegetative foliage with zero mining lesion activity",
+    "badge": "Agronomic Baseline Control",
+    "tag": "Healthy Foliage (0.0% Damage)",
+    "width": 1587,
+    "height": 1286,
+    "raw_url": "/demo/specimen_healthy_control_raw.jpg",
+    "annotated_url": "/demo/specimen_healthy_control_annotated.jpg",
+    "leaf_mask_url": "/demo/specimen_healthy_control_leaf.png",
+    "mine_mask_url": "/demo/specimen_healthy_control_mine.png",
+    "damage_detected": false,
+    "damage_percentage": 0.0,
+    "diagnosis_name": "Healthy Tomato Foliage (Clean Canopy)",
+    "diagnosis_accuracy": 90.0,
+    "leaf_area_pixels": 949518,
+    "damage_area_pixels": 0,
+    "regions_count": 0,
+    "regions": []
+  }
+]
