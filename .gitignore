@@ -58,7 +58,7 @@ data/samples/*
 !data/samples/.gitkeep
 
 # Models & Checkpoints
-# Note: Checkpoints are preserved locally and deployed via Cloudinary/R2 or Git LFS.
+# Untracked intermediate experiments:
 models/checkpoints/*
 !models/checkpoints/.gitkeep
 models/exports/*
@@ -66,6 +66,22 @@ models/exports/*
 *.pt
 *.pth
 *.onnx
+
+# Exclude training curves, logs, and artifacts:
+models/checkpoints/**/*.png
+models/checkpoints/**/*.jpg
+models/checkpoints/**/*.csv
+models/checkpoints/**/*.yaml
+models/checkpoints/**/*.bak
+
+# Allow directory traversal for checkpoints but only track production weights:
+!models/checkpoints/*/
+!models/checkpoints/*/*/
+!models/checkpoints/leaf_segmenter/leaf_unet_best.pt
+!models/checkpoints/mine_segmenter/best.pt
+!models/checkpoints/baseline/baseline_mobilenetv3_best.pt
+!models/checkpoints/astra_leaf_experiment/leaf_unet_best.pt
+!models/checkpoints/astra_mine_experiment/weights/best.pt
 
 # Frontend Next.js & Node.js
 frontend/.next/
